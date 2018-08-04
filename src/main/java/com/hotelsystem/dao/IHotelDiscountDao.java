@@ -5,34 +5,57 @@ import java.util.Date;
 import com.hotelsystem.bean.HotelDiscountBean;
 /**
  * 全场折扣Dao
- * @author Administrator
- *
+ * @ClassName IHotelDiscountDao
+ * @Description XXX
+ * @author Ren Qiang
+ * @Date 2018/8/4 上午9:39
+ * @version 1.0
  */
 public interface IHotelDiscountDao {
 	/**
-	 * 查询当天是否有全场折扣,如有折扣则返回折扣Bean，如无则返回null
-	 * @param nowadays
-	 * @return
+	 * 查询当天是否有全场折扣
+	 * @MethodName findDiscountByDate
+	 * @Description TODO
+	 * @author Ren Qiang
+	 * @Date 2018/8/4 上午9:51
+	 * @version 1.0
+	 * @param nowadays表示当前时间
+	 * @return 如有折扣则返回折扣Bean，如无则返回null
 	 */
-	public HotelDiscountBean findDiscountByDate(Date nowadays);
+	 HotelDiscountBean findDiscountByDate(Date nowadays);
 	/**
-	 * 通过id修改全场折扣信息，返回受影响行数
-	 * @param newDiscountBean
+	 * 通过id修改全场折扣信息
+	 * @MethodName updateDiscount
+	 * @Description TODO
+	 * @author Ren Qiang
+	 * @Date 2018/8/4 上午9:56
+	 * @version 1.0
+	 * @param updateDiscount为新的全场折扣
+	 * @param id为全场折扣id
+	 * @return 返回受影响行数
+	 */
+	 int updateDiscount(HotelDiscountBean newDiscountBean,int id );
+	/**
+	 * 添加新的全场折扣
+	 * @MethodName addDiscount
+	 * @Description TODO
+	 * @author Ren Qiang
+	 * @Date 2018/8/4 上午10:00
+	 * @version 1.0
+	 * @param newDiscountBean 新的全场折扣
+	 * @return 返回受影响行数
+	 */
+	 int addDiscount(HotelDiscountBean newDiscountBean);
+	/**
+	 * 通过id删除该id对应的全场折扣
+	 * @MethodName deleteDiscountById
+	 * @Description TODO
+	 * @author Ren Qiang
+	 * @Date 2018/8/4 上午10:02
+	 * @version 1.0
 	 * @param id
-	 * @return
+	 * @return 返回受影响行数
 	 */
-	public int updateDiscount(HotelDiscountBean newDiscountBean,int id );
-	/**
-	 * 添加新的全场折扣，返回受影响行数
-	 * @param newDiscountBean
-	 * @return
-	 */
-	public int addDiscount(HotelDiscountBean newDiscountBean);
-	/**
-	 * 通过id删除该id对应的全场折扣，返回受影响行数
-	 * @param id
-	 * @return
-	 */
-	public int deleteDiscountById(int id);
+	 int deleteDiscountById(int id);
 
 }

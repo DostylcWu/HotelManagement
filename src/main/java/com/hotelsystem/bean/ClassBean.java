@@ -1,31 +1,38 @@
 package com.hotelsystem.bean;
 /**
- * 
- * @author Administrator
- *
+ * @ClassNmae ClassBean 
+ * @author Weizhengyi
+ * @Descrption TODO
+ * @Date 2018/8/4
+ * @version 1.0
  */
-public class ClassBean {
+public class ClassBean{
 
-	private int c_id;
-	private String c_name;
-	private double c_discount;
-	public int getC_id() {
-		return c_id;
+	private int classId;
+	private String className;
+	private double classDiscount;
+
+	public int getClassId() {
+		return classId;
 	}
-	public void setC_id(int c_id) {
-		this.c_id = c_id;
+
+	public void setClassId(int classId) {
+		this.classId = classId;
 	}
-	public String getC_name() {
-		return c_name;
+
+	public String getClassName() {
+		return className;
 	}
-	public void setC_name(String c_name) {
-		this.c_name = c_name;
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
-	public double getC_discount() {
-		return c_discount;
+
+	public double getClassDiscount() {
+		return classDiscount;
 	}
-	public void setC_discount(double c_discount) {
-		this.c_discount = c_discount;
+
+	public void setClassDiscount(double classDiscount) {
+		this.classDiscount = classDiscount;
 	}
-	
 }

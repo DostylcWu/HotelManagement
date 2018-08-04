@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <!-- 给当前的xml的文件命名，区分sql块，以后会出现多个sql块 -->
+<mapper namespace="com.hotelsystem.comment">
+  <select id="addComment" parameterType="com.hotelsystem.bean.CommentBean">
+    insert into 
+    	user_comment (uc_time, uc_content, uc_name) 
+    		   values(#{uc_time}, #{uc_content}, #{uc_name});
+  </select>
+
+</mapper>
