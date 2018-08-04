@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace：就是给当前xml文件命名，区分sql块，以后会出现多个sql块 -->
+<mapper namespace="com.hotelsystem.dao.IGuestDao">
+  	
+  	
+  	
+  	<select id="findGuestById" parameterType="int" resultMap="guest">
+  		select * from guest where g_id=#{guestId}
+  	</select>
+  	<resultMap type="com.hotelsystem.bean.GuestBean" id="guest">
+  		<id property="guestId" column="g_id"></id>
+  		<result property="guestName" column="g_name"></result>
+  		<result property="guestIden" column="g_iden"></result>
+  		<result property="guestIn" column="g_in"></result>
+  		<result property="guestOut" column="g_out"></result>
+  		<result property="guestMoney" column="g_money"></result>
+  		<result property="guestPay" column="g_pay"></result>
+  		<association property="room" javaType="com.hotelsystem.bean.RoomInfoBean">
+  			<id property="id" column="ri_id"></id>
+	  		<result property="floor" column="ri_floor"></result>
+  		</association>
+  	</resultMap>
+  	
+</mapper>

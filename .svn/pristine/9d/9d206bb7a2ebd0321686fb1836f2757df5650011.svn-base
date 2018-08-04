@@ -4,11 +4,19 @@ package com.hotelsystem.bean;
  * @author Administrator
  *
  */
-public class MembersBean {
+public class MenmbersBean {
 
 	private int m_id;
 	private String m_name;
 	private double m_consume;
+	public LevelDiscountBean lb;
+
+	public LevelDiscountBean getLb() {
+		return lb;
+	}
+	public void setLb(LevelDiscountBean lb) {
+		this.lb = lb;
+	}
 	public int getM_id() {
 		return m_id;
 	}

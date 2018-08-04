@@ -1,12 +1,12 @@
 package com.hotelsystem.bean;
 /**
- * @ClassNmae ClassBean 
+ * @ClassName LevelDiscountBean
  * @author Weizhengyi
  * @Descrption TODO
  * @Date 2018/8/4
  * @version 1.0
  */
-public class ClassBean{
+public class LevelDiscountBean{
 
 	private int classId;
 	private String className;
