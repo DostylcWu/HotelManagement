@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- RenQiang 2018-8-5 -->
+<!-- namespace：引用到IHotelDiscountDao -->
+<mapper namespace="com.hotelsystem.dao.IRoomInfoDao">
+  	
+  	<!-- 通过房间号修改其房间状态 -->
+  	<update id="updateDiscount">
+  		update room_info set ri_s_id=#{aimStateId} where ri_id=#{roomId};
+  	</update>
+  	  	
+</mapper>

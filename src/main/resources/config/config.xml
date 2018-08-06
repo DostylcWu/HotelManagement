@@ -7,7 +7,7 @@
     </settings>
     <!--为com.mjl.model.User设置别名 User 方便调用-->
     <typeAliases>
+       <package name="com.hotelsystem.bean"/>
     </typeAliases>
-
 
 </configuration>
