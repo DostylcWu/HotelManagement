@@ -1,0 +1,5 @@
+2018-08-06 10:48:58,451 [main] [org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:574)] - [INFO] Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1d251891: startup date [Mon Aug 06 10:48:58 CST 2018]; root of context hierarchy
+2018-08-06 10:48:58,496 [main] [org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)] - [INFO] Loading XML bean definitions from class path resource [config/applicationContext.xml]
+2018-08-06 10:48:58,977 [main] [org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)] - [INFO] Loading properties file from class path resource [jdbc.properties]
+2018-08-06 10:48:59,090 [MLog-Init-Reporter] [com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)] - [INFO] MLog clients using slf4j logging.
+2018-08-06 10:48:59,365 [main] [com.mchange.v2.log.slf4j.Slf4jMLog$Slf4jMLogger$InfoLogger.log(Slf4jMLog.java:212)] - [INFO] Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]

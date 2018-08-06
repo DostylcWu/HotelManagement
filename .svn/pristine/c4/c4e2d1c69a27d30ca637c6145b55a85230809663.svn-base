@@ -1,0 +1,57 @@
+package com.test.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import com.hotelsystem.dao.IHotelOverTimeDao;
+import com.hotelsystem.dao.IRoomInfoDao;
+import com.test.util.MybatisUtil;
+
+public class RoomInfoTest {
+
+	//修改某具体房间状态
+	@Test
+	public void test1(){
+		// 通过测试包里的工具包产生一个sqlsession对象
+		SqlSession session = MybatisUtil.getSqlSession(true);
+		try {
+			// 通过session调用持久化方法
+			IRoomInfoDao dao=session.getMapper(IRoomInfoDao.class);
+			System.out.println(dao.updateRoomStateById(1001, 2));
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
+	//查询所有房间信息，并按楼层分类
+		@Test
+		public void test2(){
+			// 通过测试包里的工具包产生一个sqlsession对象
+			SqlSession session = MybatisUtil.getSqlSession(true);
+			try {
+				// 通过session调用持久化方法
+				IRoomInfoDao dao=session.getMapper(IRoomInfoDao.class);
+				System.out.println(dao.findAllRoomInfo());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+		//查询特定房间类型的可预定数量
+				@Test
+				public void test3(){
+					// 通过测试包里的工具包产生一个sqlsession对象
+					SqlSession session = MybatisUtil.getSqlSession(true);
+					try {
+						// 通过session调用持久化方法
+						IRoomInfoDao dao=session.getMapper(IRoomInfoDao.class);
+						System.out.println(dao.findAllRoomInfoCountByType(1));
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						session.close();
+					}
+				}
+}
