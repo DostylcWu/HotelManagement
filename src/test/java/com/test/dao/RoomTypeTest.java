@@ -6,7 +6,6 @@ import org.junit.Test;
 import com.hotelsystem.bean.RoomTypeBean;
 import com.hotelsystem.dao.IRoomStateDao;
 import com.hotelsystem.dao.IRoomTypeDao;
-import com.hotelsystem.service.impl.OverTimeServiceImpl;
 import com.test.util.MybatisUtil;
 
 public class RoomTypeTest {

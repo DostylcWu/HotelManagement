@@ -8,12 +8,12 @@
   	
   	<!-- 通过房间号修改其房间状态 -->
   	<update id="updateRoomStateById">
-  		update room_info set ri_s_id=#{aimStateId} where ri_id=#{roomId};
+  		update room_info set ri_s_id=#{aimStateId} where ri_id=#{roomId} and flag=0;
   	</update>
   	
   	<!-- 更据房间号查询该房间信息 -->
   	<select id="findRoomInfoById"  parameterType="int" resultMap="singleRoomInfoMap">
-   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_id=#{roomId}; 
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_id=#{roomId} and flag=0; 
   	</select>
   	<resultMap id="singleRoomInfoMap" type="RoomInfoBean">
   	    <id property="id" column="ri_id"></id>
@@ -43,11 +43,21 @@
   	
   	<!-- 查询所有房间信息并按楼层分类 -->
   	<select id="findAllRoomInfo" resultMap="singleRoomInfoMap">
-   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id group by ri_floor order by ri_id asc; 
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where a.flag=0 group by ri_floor order by ri_id asc ; 
   	</select>
   	
   	<!-- 查询特定类型可用房间数量 -->
   	<select id="findAllRoomInfoCountByType" parameterType="int" resultType="int">
-   		select count(*) from room_info where ri_s_id=1 and ri_rt_id=#{typeId}; 
-  	</select>	
+   		select count(*) from room_info where ri_s_id=1 and ri_rt_id=#{typeId} and flag=0; 
+  	</select>
+  	
+  	<!-- 通过房间号删除该房间信息 -->
+  	<update id="deleteRoomInfoById">
+  		update room_info set flag=1 where ri_id=#{roomId};
+  	</update>
+  	
+  	<!-- 添加房间 -->
+  	<insert id="addRoom" parameterType="RoomInfoBean">
+  		insert into room_info (ri_id,ri_floor,ri_s_id,ri_rt_id) values(#{id},#{floor},#{roomState.id},#{roomType.id});
+  	</insert>	
 </mapper>

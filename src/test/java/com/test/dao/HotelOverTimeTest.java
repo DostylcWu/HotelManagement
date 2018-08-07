@@ -9,8 +9,7 @@ import org.junit.Test;
 import com.hotelsystem.bean.HotelDiscountBean;
 import com.hotelsystem.dao.IHotelDiscountDao;
 import com.hotelsystem.dao.IHotelOverTimeDao;
-import com.hotelsystem.service.IOverTimeService;
-import com.hotelsystem.service.impl.OverTimeServiceImpl;
+
 import com.test.util.MybatisUtil;
 
 public class HotelOverTimeTest {
@@ -49,7 +48,7 @@ public class HotelOverTimeTest {
 			}
 		}
 		//测试OverTimeServiceImpl
-		@Test
+/*		@Test
 		public void test3(){
 			OverTimeServiceImpl service=new OverTimeServiceImpl();
 			// 通过测试包里的工具包产生一个sqlsession对象
@@ -71,5 +70,5 @@ public class HotelOverTimeTest {
 			} finally {
 				session.close();
 			}
-		}
+		}*/
 }

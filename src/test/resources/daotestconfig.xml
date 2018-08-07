@@ -25,7 +25,7 @@
         <property name="driver" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/hotelsystem"/>
         <property name="username" value="root"/>
-        <property name="password" value="12345678"/>
+        <property name="password" value="root"/>
       </dataSource>
     </environment>
   </environments>
@@ -36,5 +36,6 @@
     <mapper resource="com/hotelsystem/mapper/RoomInfoMapper.xml"></mapper>
     <mapper resource="com/hotelsystem/mapper/RoomStateMapper.xml"></mapper>
     <mapper resource="com/hotelsystem/mapper/RoomTypeMapper.xml"></mapper>
+      <mapper resource="com/hotelsystem/mapper/ConsumeMapper.xml"></mapper>
   </mappers>
 </configuration>
