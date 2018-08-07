@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="971bdb19-94a0-4acc-9130-865b962962bf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/FlowBean.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/HotelOverTimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/dao/HotelOverTimeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/RoomTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/dao/RoomTypeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl/RoomTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl/RoomTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/GuestDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/HotelDiscountTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/HotelOverTimeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/RoomInfoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/RoomStateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/test/dao/RoomTypeTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/daotestconfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/daotestconfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,23 +60,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConsumeDaoTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java">
+      <file leaf-file-name="ConsumeMapper.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="567">
+              <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IConsumeDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java">
+      <file leaf-file-name="IGuestDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IGuestDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+            <state relative-caret-position="120">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICommentDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ICommentDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,9 +93,13 @@
       <file leaf-file-name="ConsumeBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="30" />
               <folding>
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
                 <element signature="e#430#431#0" expanded="true" />
                 <element signature="e#458#459#0" expanded="true" />
                 <element signature="e#500#501#0" expanded="true" />
@@ -117,68 +133,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/config.xml">
+      <file leaf-file-name="IConsumeService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/IConsumeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="springmvc-servlet.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/springmvc-servlet.xml">
+      <file leaf-file-name="CommentBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CommentBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="63" column="30" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="daotestconfig.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/daotestconfig.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsumeMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-768">
-              <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MybatisUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/test/util/MybatisUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ICommentDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ICommentDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -198,9 +166,15 @@
     <findStrings>
       <find>SecureRandom</find>
       <find>c_c_id</find>
+      <find>con_flow_id</find>
+      <find>c_flow_id</find>
+      <find>conFlowId</find>
     </findStrings>
     <replaceStrings>
       <replace>c_ci_id</replace>
+      <replace>c_flow_id</replace>
+      <replace>c_alipay_id</replace>
+      <replace>conAlipayId</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/com/hotelsystem/service</dir>
@@ -242,11 +216,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBeanServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/ConsumeBeanServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ConsumeBeanDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java" />
         <option value="$PROJECT_DIR$/src/test/resources/daotestconfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl/RoomTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java" />
       </list>
     </option>
   </component>
@@ -268,9 +243,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="89" />
-    <option name="y" value="101" />
+    <option name="y" value="102" />
     <option name="width" value="1831" />
-    <option name="height" value="899" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -361,6 +336,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hotelsystem" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="showtype" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hotelsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="showtype" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -471,6 +457,134 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ReserveRoomMapper.xml</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ReservePeopleMapper.xml</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ReserveNumberMapper.xml</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/CheckInPersonMapper.xml</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IReserveRoomDao.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IReservePeopleDao.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IReserveNumberDao.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ICheckInPersonDao.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/resources/log4j.properties</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/MenmbersMapper.xml</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/GuestBean.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CheckInBean.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl/RoomTypeServiceImpl.java</PATH>
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/IRoomTypeService.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/GuestBean.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        <PATH vcs="svn" revision="170">$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/Customer.java</PATH>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -483,7 +597,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConsumeDaoTest.test1">
+  <component name="RunManager" selected="JUnit.ConsumeDaoTest.test2">
     <configuration name="AesEncodeUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hotelsystem.utils.AesEncodeUtil" />
       <module name="HotelManagement" />
@@ -497,29 +611,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="AlipayAction.OrderId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="HotelManagement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.hotelsystem.action.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.hotelsystem.action" />
-      <option name="MAIN_CLASS_NAME" value="com.hotelsystem.action.AlipayAction" />
-      <option name="METHOD_NAME" value="OrderId" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="AlipayAction.orderId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelManagement" />
@@ -580,6 +671,29 @@
       <option name="PACKAGE_NAME" value="com.test.dao" />
       <option name="MAIN_CLASS_NAME" value="com.test.dao.ConsumeDaoTest" />
       <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ConsumeDaoTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HotelManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.test.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.test.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.test.dao.ConsumeDaoTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -703,18 +817,18 @@
     <list>
       <item itemvalue="Tomcat Server.Unnamed" />
       <item itemvalue="JUnit.AlipayTest.OrderId" />
-      <item itemvalue="JUnit.AlipayAction.OrderId" />
       <item itemvalue="JUnit.AlipayAction.orderId" />
       <item itemvalue="Application.AesEncodeUtil" />
       <item itemvalue="JUnit.ConsumeDaoTest.test1" />
+      <item itemvalue="JUnit.ConsumeDaoTest.test2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConsumeDaoTest.test2" />
         <item itemvalue="JUnit.ConsumeDaoTest.test1" />
         <item itemvalue="Application.AesEncodeUtil" />
         <item itemvalue="JUnit.AlipayAction.orderId" />
         <item itemvalue="JUnit.AlipayTest.OrderId" />
-        <item itemvalue="JUnit.AlipayAction.OrderId" />
       </list>
     </recent_temporary>
   </component>
@@ -758,7 +872,7 @@
       <workItem from="1533522372882" duration="822000" />
       <workItem from="1533523429122" duration="5222000" />
       <workItem from="1533543797659" duration="13618000" />
-      <workItem from="1533623146503" duration="3365000" />
+      <workItem from="1533623146503" duration="7529000" />
     </task>
     <task id="LOCAL-00001" summary="2018-8-4">
       <created>1533314888032</created>
@@ -795,31 +909,17 @@
       <option name="project" value="LOCAL" />
       <updated>1533609307032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Consume实现">
+      <created>1533626812039</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533626812039</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 00m 59s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 01m 13s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 04m 31s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 32m 50s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 33m 45s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlipayAction_orderId - 2018.08.06 at 11h 37m 24s.xml">
-      <configuration name="AlipayAction.orderId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 15h 20m 09s.xml">
-      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 15h 22m 01s.xml">
       <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
     </history-entry>
@@ -829,12 +929,33 @@
     <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 15h 23m 14s.xml">
       <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 15h 25m 18s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 17h 02m 29s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 17h 03m 05s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 17h 03m 32s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 17h 03m 49s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test1 - 2018.08.07 at 17h 14m 37s.xml">
+      <configuration name="ConsumeDaoTest.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConsumeDaoTest_test2 - 2018.08.07 at 17h 23m 57s.xml">
+      <configuration name="ConsumeDaoTest.test2" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36426000" />
+    <option name="totallyTimeSpent" value="40590000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="101" width="1831" height="899" extended-state="0" />
+    <frame x="89" y="102" width="1831" height="898" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -856,7 +977,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32848486" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32969698" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
       <window_info anchor="right" id="Mybatis datasource" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -883,7 +1004,8 @@
     <MESSAGE value="2018-8-4" />
     <MESSAGE value="2018-8-5" />
     <MESSAGE value="AES加密解密" />
-    <option name="LAST_COMMIT_MESSAGE" value="AES加密解密" />
+    <MESSAGE value="Consume实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="Consume实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,14 +1013,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/Customer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/ICommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CheckInPersonBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1071,13 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IGuestDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/ConsumeBeanServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1130,23 +1237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/IConsumeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/HotelOverTimeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/GuestDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1161,20 +1251,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ICommentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1185,6 +1265,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/HotelOverTimeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/ICommentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/util/MybatisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CommentBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/IConsumeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/daotestconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -1192,42 +1320,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/util/MybatisUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IGuestDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/daotestconfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-768">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="120">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/ConsumeBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="90" column="18" selection-start-line="90" selection-start-column="18" selection-end-line="90" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="30" />
           <folding>
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
             <element signature="e#430#431#0" expanded="true" />
             <element signature="e#458#459#0" expanded="true" />
             <element signature="e#500#501#0" expanded="true" />
@@ -1260,13 +1368,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/dao/IConsumeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        <state relative-caret-position="368">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/user/showtype/impl/RoomTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="48" column="35" lean-forward="true" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/mapper/ConsumeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.hotelsystem.dao.ICheckInPersonDao">
  
- 	<select id="selectPersons" parameterType="int" resultMap="map">
+ 	<select id="findCheckInPersonByRoomId" parameterType="String" resultMap="map">
  		select * from checkin_person where cp_rr_id=#{reserveRoom.id} and flag=0
  	</select>
  	<resultMap type="CheckInPersonBean" id="map">
@@ -15,13 +15,13 @@
   		</association>
  	</resultMap>
  	
- 	<insert id="insert" parameterType="CheckInPersonBean">
+ 	<insert id="insertCheckInPerson" parameterType="CheckInPersonBean">
  		insert into checkin_person(cp_name,cp_rr_id) values (#{name},#{reserveRoom.id})
  	</insert>
- 	<update id="update" parameterType="CheckInPersonBean">
+ 	<update id="updateCheckInPerson" parameterType="CheckInPersonBean">
  		update checkin_person set cp_name=#{name} where cp_id=#{id}
  	</update>
- 	<update id="delete" parameterType="int">
+ 	<update id="deleteCheckInPerson" parameterType="CheckInPersonBean">
  		update checkin_person set flag=1 where cp_id=#{id}
  	</update>
  </mapper>

@@ -3,10 +3,10 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.hotelsystem.dao.IReservePeopleDao">
  
- 	<select id="selectById" parameterType="int" resultMap="map">
+ 	<select id="findReservePeopleByPeopleId" parameterType="int" resultMap="reservePeopleMap">
  		select * from reserve_people where rp_id=#{id} and flag=0
  	</select>
- 	<resultMap type="ReservePeopleBean" id="map">
+ 	<resultMap type="ReservePeopleBean" id="reservePeopleMap">
  		<id property="id" column="rp_id"/>
   		<result property="name" column="rp_name"/>
   		<result property="tel" column="rp_tel"/>
@@ -23,15 +23,15 @@
   		<result property="state" column="rr_state"/>
  	</resultMap>
  	
- 	<select id="selectByName" parameterType="String" resultMap="mapName">
+ 	<select id="findReservePeopleByPeopleName" parameterType="String" resultMap="PeopleMapByName">
  		select * from reserve_people where rp_name=#{name} and flag=0
  	</select>
- 	<resultMap type="ReservePeopleBean" id="mapName">
+ 	<resultMap type="ReservePeopleBean" id="PeopleMapByName">
  		<id property="id" column="rp_id"/>
   	<result property="name" column="rp_name"/>
-  	<collection property="reserveRoomList" ofType="ReserveRoomBean" resultMap="roomMapName"></collection>
+  	<collection property="reserveRoomList" ofType="ReserveRoomBean" resultMap="roomMapByName"></collection>
  	</resultMap>
- 	<resultMap type="ReserveRoomBean" id="roomMapName">
+ 	<resultMap type="ReserveRoomBean" id="roomMapByName">
  		<id property="id" column="rr_id"/>
   		<result property="checkIn" column="rr_in"/>
   		<result property="checkOut" column="rr_out"/>
@@ -41,10 +41,10 @@
   		<result property="state" column="rr_state"/>
  	</resultMap>
  	
- 	<insert id="insert" parameterType="ReservePeopleBean" keyProperty="id" useGeneratedKeys="true">
+ 	<insert id="insertReservePeople" parameterType="ReservePeopleBean" keyProperty="id" useGeneratedKeys="true">
  		insert into reserve_people(rp_name,rp_tel,rp_msg) values (#{name},#{tel},#{message})
  	</insert>
- 	<update id="update" parameterType="ReservePeopleBean">
+ 	<update id="updateReservePeople" parameterType="ReservePeopleBean">
  		update reserve_people 
  		<set> 
  			<if test="tel != null">rp_tel=#{tel}</if>
@@ -53,7 +53,7 @@
  		</set> 
  		where rp_id=#{id} and flag=0;
  	</update>
- 	<update id="delete" parameterType="int">
+ 	<update id="deleteReservePeople" parameterType="ReservePeopleBean">
  		update reserve_people set flag=1 where rp_id=#{id}
  	</update>
  </mapper>

@@ -17,11 +17,20 @@ public class ConsumeBean {
     private Double conMoney;
     private Date conDate;
     private Integer conFlag;
+    private String conAlipayId;
+
+    public String getConAlipayId() {
+        return conAlipayId;
+    }
+
+    public void setConAlipayId(String conAlipayId) {
+        this.conAlipayId = conAlipayId;
+    }
 
     public ConsumeBean() {
     }
 
-    public ConsumeBean(String conId, String conCheckId, String conName, Integer conMount, Double conMoney, Date conDate, Integer conFlag) {
+    public ConsumeBean(String conId, String conCheckId, String conName, Integer conMount, Double conMoney, Date conDate, Integer conFlag, String conAlipayId) {
         this.conId = conId;
         this.conCheckId = conCheckId;
         this.conName = conName;
@@ -29,6 +38,7 @@ public class ConsumeBean {
         this.conMoney = conMoney;
         this.conDate = conDate;
         this.conFlag = conFlag;
+        this.conAlipayId = conAlipayId;
     }
 
     public String getConId() {

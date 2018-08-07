@@ -23,8 +23,20 @@ public class ConsumeDaoTest {
         SqlSession session = MybatisUtil.getSqlSession(true);
         try {
             IConsumeDao consumeDao=session.getMapper(IConsumeDao.class);
-            ConsumeBean consumeBean=new ConsumeBean("201","101","哈哈",14,11.11,new Date(),1);
+            ConsumeBean consumeBean=new ConsumeBean("201","101","哈哈",14,11.11,new Date(),1,"1001");
             consumeDao.insert(consumeBean);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
+    @Test
+    public void test2(){
+        SqlSession session = MybatisUtil.getSqlSession(true);
+        try {
+            IConsumeDao consumeDao=session.getMapper(IConsumeDao.class);
+            consumeDao.updateConFlagByConId(0,"201");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace：就是给当前xml文件命名，区分sql块，以后会出现多个sql块 -->
+<mapper namespace="com.hotelsystem.dao.IMenmbersDao">
+  	
+  	<resultMap id="members" type="com.hotelsystem.bean.MenmbersBean">
+  		<id property="mId" column="m_id"></id>
+  		<result property="mName" column="g_name"></result>
+  		<result property="mConsume" column="g_iden"></result>
+  		<association property="lb" javaType="com.hotelsystem.bean.LevelDiscountBean">
+  			<id property="classId" column="class_id"></id>
+	  		<result property="className" column="c_name"></result>
+	  		<result property="classDiscount" column="c_discount"></result>
+  		</association>
+  	</resultMap>
+  	
+  	
+  	
+  	<select id="findById" parameterType="string" resultMap="members">
+  		select * from menmbers where m_id=#{tel} and flag=0;
+  	</select>
+  	<select id="findByName" parameterType="string" resultMap="members">
+  		select * from menmbers where m_name=#{name} and flag=0;
+  	</select>
+	
+
+  	
+  	
+</mapper>
