@@ -60,4 +60,19 @@
   	<update id="deleteRoomType" parameterType="int">
   		update room_type set flag=1 where rt_id=#{typeId} ;
   	</update>
+  	
+  	<!-- 根据房间类型名查询该类型ID -->
+  	<select id="findRoomTypeIdByTypeName"  parameterType="String" resultType="int">
+   		select rt_id from room_type where rt_name=#{typeName} and flag=0; 
+  	</select>
+  	
+  	<!-- 根据房间类型名查询该类型房间单价 -->
+  	<select id="findRoomPriceByTypeName"  parameterType="String" resultType="int">
+   		select rt_price from room_type where rt_name=#{typeName} and flag=0; 
+  	</select>
+  	
+  	<!-- 根据房间类型ID查询该房间类型的详情 -->
+  	<select id="findRoomTypeById"  parameterType="int" resultMap="allRoomType">
+   		select * from room_type where rt_id=#{roomTypeId} and flag=0; 
+  	</select>
 </mapper>

@@ -51,6 +51,11 @@
    		select count(*) from room_info where ri_s_id=1 and ri_rt_id=#{typeId} and flag=0; 
   	</select>
   	
+  	<!-- 查询特定类型房间所有的房间数量 -->
+  	 <select id="findSpecialRoomInfoCountByType" parameterType="int" resultType="int">
+   		select count(*) from room_info where ri_rt_id=#{typeId} and flag=0; 
+  	</select>
+  	
   	<!-- 通过房间号删除该房间信息 -->
   	<update id="deleteRoomInfoById">
   		update room_info set flag=1 where ri_id=#{roomId};
@@ -60,4 +65,9 @@
   	<insert id="addRoom" parameterType="RoomInfoBean">
   		insert into room_info (ri_id,ri_floor,ri_s_id,ri_rt_id) values(#{id},#{floor},#{roomState.id},#{roomType.id});
   	</insert>	
+  	
+  	<!-- 查询相应类型的房间 -->
+  	<select id="findEmptyRoomByType" parameterType="int" resultMap="singleRoomInfoMap">
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_s_id=1 and ri_rt_id=#{typeId} and a.flag=0; 
+  	</select>
 </mapper>

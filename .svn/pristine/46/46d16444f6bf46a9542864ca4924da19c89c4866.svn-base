@@ -1,4 +1,4 @@
-package com.hotelsystem.service.impl;
+package com.hotelsystem.service.user.comment.impl;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import com.hotelsystem.bean.CommentBean;
 import com.hotelsystem.bean.ManagerLoginBean;
 import com.hotelsystem.bean.UserLoginBean;
 import com.hotelsystem.dao.ICommentDao;
-import com.hotelsystem.service.ICommentService;
+import com.hotelsystem.service.user.comment.ICommentService;
 import com.hotelsystem.utils.MybatisUtil;
 
 public class CommentServiceImpl implements ICommentService{

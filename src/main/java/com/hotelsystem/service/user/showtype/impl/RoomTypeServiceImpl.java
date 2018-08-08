@@ -13,6 +13,8 @@ import com.hotelsystem.bean.LevelDiscountBean;
 import com.hotelsystem.bean.RoomInfoBean;
 import com.hotelsystem.bean.RoomTypeBean;
 import com.hotelsystem.dao.ILevelDiscountDao;
+import com.hotelsystem.dao.IReserveNumberDao;
+import com.hotelsystem.dao.IReserveRoomDao;
 import com.hotelsystem.dao.IRoomInfoDao;
 import com.hotelsystem.dao.IRoomTypeDao;
 import com.hotelsystem.service.user.showtype.IRoomTypeService;
@@ -52,11 +54,11 @@ public class RoomTypeServiceImpl implements IRoomTypeService {
 			double price = oldPrice * levelList.get(i).getClassDiscount();
 			priceMap.put(levelList.get(i).getClassName(), price);
 		}
-		return null;
+		return priceMap;
 	}
 
 	@Override
-	public int availableRoomNumber(RoomTypeBean roomType, Date date) {
+	public int availableRoomNumber(RoomTypeBean roomType) {
 		// 可用房间的数量，现在只做查询今日的
 		SqlSession session = MybatisUtil.getSqlSession(true);
 		// 查询房间信息
@@ -64,6 +66,31 @@ public class RoomTypeServiceImpl implements IRoomTypeService {
 		int count = 0;
 		count = dao.findAllRoomInfoCountByType(roomType.getId());
 		return count;
+	}
+
+	@Override		// 今日可用房间
+	public int availableRoomNumber(RoomTypeBean roomType, String dateStart, String dateEnd) {
+/*		SqlSession session = MybatisUtil.getSqlSession(true);
+		
+		// 查询房间信息
+		IRoomInfoDao roomInfoDao = session.getMapper(IRoomInfoDao.class);
+		
+		// 该类型房间所有的数量
+		int count = 0;
+		count = roomInfoDao.findSpecialRoomInfoCountByType(roomType.getId());
+		
+		// 预定表中查找该类型房间已经被预定的数量
+		IReserveRoomDao reserveRoomDao = session.getMapper(IReserveRoomDao.class);
+		int reservedCount = 0;
+		reservedCount = reserveRoomDao.findReserveCountByTypeId(roomType.getId(), dateStart, dateEnd);
+		
+		// 入住表中查询该类型房间已经被入住的数量
+		ICheckInDao checkInDao = session.getMapper(ICheckInDao.class)
+		int checkCount = 0;
+		checkCount = checkInDao.findCheckInCountXXX(roomType.getId());
+		
+		count = count - reservedCount;*/
+		return 1;
 	}
 	
 }

@@ -59,6 +59,16 @@ public interface IRoomInfoDao {
      */
 	public int findAllRoomInfoCountByType(int typeId);
 	/**
+     * 根据房间类型查询此类型可用预定数量
+     * @MethodName findSpecialRoomInfoCountByType
+	 * @Description TODO
+	 * @author Zhang JiaLin
+	 * @Date 2018/8/7
+	 * @version 1.0
+     * @return 返回此类型房间所有数量，不管有没有被预定或者入住数量
+     */
+	public int findSpecialRoomInfoCountByType(int typeID);
+	/**
      * 根据房间ID删除该房间信息
      * @MethodName deleteRoomInfoById
 	 * @Description TODO
@@ -71,7 +81,7 @@ public interface IRoomInfoDao {
 	public int deleteRoomInfoById(int roomId);
 	/**
      * 添加房间
-     * @MethodName addRoom
+     * @MethodName insertRoom
 	 * @Description TODO
 	 * @author Ren Qiang
 	 * @Date 2018/8/6 上午14:49
@@ -79,6 +89,11 @@ public interface IRoomInfoDao {
 	 * @param bean 新房间
      * @return 返回受影响行数
      */
-	public int addRoom(RoomInfoBean bean);
+	//public int insertRoom(RoomInfoBean bean);
 
+	/**
+	 * 通过类型查询空闲房间
+	 * @return
+	 */
+	List<RoomInfoBean> findEmptyRoomByType(int typeId);
 }

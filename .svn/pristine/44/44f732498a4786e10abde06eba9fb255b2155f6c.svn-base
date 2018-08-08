@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 给当前的xml的文件命名，区分sql块，以后会出现多个sql块 -->
+<mapper namespace="com.hotelsystem.dao.ILevelDiscountDao">
+
+<insert id="addLevelDiscount" parameterType="LevelDiscountBean">
+	INSERT INTO level_discount(c_name,c_discount)VALUES(#{className},#{classDiscount})
+</insert>
+<update id="updateLevelDiscount" parameterType="LevelDiscountBean">
+	UPDATE level_discount SET c_discount=#{classDiscount} WHERE c_id=#{classId};
+</update>
+<update id="delLevelDiscount" parameterType="int">
+	UPDATE level_discount SET flag=1 WHERE c_id=#{classId}
+</update>
+<select id="checkLevelDiscount" resultMap="discountMap">
+	SELECT * FROM level_discount where flag=0;
+</select>
+<resultMap type="LevelDiscountBean" id="discountMap">
+		<id column="c_id" property="classId" />
+		<result column="c_name" property="className"/>
+		<result column="u_discount" property="classDiscount" />
+	</resultMap>
+</mapper>

@@ -1,0 +1,5 @@
+2018-08-08 10:41:49,701 [main] [org.n3r.idworker.utils.HttpReq.exec(HttpReq.java:64)] - [ERROR] exec error id.worker.server
+2018-08-08 10:41:49,705 [main] [org.n3r.idworker.utils.HttpReq.exec(HttpReq.java:64)] - [ERROR] exec error id.worker.server
+2018-08-08 10:41:49,730 [main] [org.n3r.idworker.strategy.DefaultRandomCodeStrategy.createBloomFilter(DefaultRandomCodeStrategy.java:77)] - [INFO] create new bloom filter
+2018-08-08 10:41:49,731 [main] [org.n3r.idworker.strategy.DefaultRandomCodeStrategy.tryUsePrefix(DefaultRandomCodeStrategy.java:63)] - [INFO] get available prefix index file /Users/mac/.idworkers/769.code.prefix.1808
+2018-08-08 10:42:32,134 [Thread-1] [org.n3r.idworker.utils.HttpReq.exec(HttpReq.java:64)] - [ERROR] exec error id.worker.server

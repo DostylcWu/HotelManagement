@@ -1,0 +1,84 @@
+package com.test.dao;
+
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import com.hotelsystem.bean.HotelDiscountBean;
+import com.hotelsystem.bean.HotelOverTimeBean;
+import com.hotelsystem.dao.IHotelDiscountDao;
+import com.hotelsystem.dao.IHotelOverTimeDao;
+import com.hotelsystem.dao.IRoomTypeDao;
+import com.hotelsystem.service.impl.manager.OverTimeServiceImpl;
+import com.test.util.MybatisUtil;
+
+public class HotelOverTimeTest {
+
+	//查询收费规则
+		@Test
+		public void test1(){
+			// 通过测试包里的工具包产生一个sqlsession对象
+			SqlSession session = MybatisUtil.getSqlSession(true);
+			try {
+				// 通过session调用持久化方法
+				IHotelOverTimeDao dao=session.getMapper(IHotelOverTimeDao.class);
+				System.out.println(dao.findHotelOverTimeRule());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+		//修改收费规则
+		@Test
+		public void test2(){
+			// 通过测试包里的工具包产生一个sqlsession对象
+			SqlSession session = MybatisUtil.getSqlSession(true);
+			try {
+				// 通过session调用持久化方法
+				IHotelOverTimeDao dao=session.getMapper(IHotelOverTimeDao.class);
+				SimpleDateFormat df = new SimpleDateFormat("HH:MM:SS");
+				Date n=df.parse("13:00:00");
+				Date a=df.parse("17:00:00");
+				HotelOverTimeBean bean=new HotelOverTimeBean();
+				bean.setOverHalfDayStartTime(n);
+				bean.setOverAllDayStartTime(a);
+				System.out.println(dao.updateOverTimeRule(bean));
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+		//测试OverTimeServiceImpl
+		@Test
+		public void test3(){
+			OverTimeServiceImpl service=new OverTimeServiceImpl();
+			// 通过测试包里的工具包产生一个sqlsession对象
+			SqlSession session = MybatisUtil.getSqlSession(true);
+			try {
+				// 通过session调用持久化方法
+				IHotelOverTimeDao dao=session.getMapper(IHotelOverTimeDao.class);
+				IRoomTypeDao tdao=session.getMapper(IRoomTypeDao.class);
+				service.setDao(dao);
+				service.setTdao(tdao);
+				SimpleDateFormat df = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+				String a="2018:8:7 13:00:00";
+				String b="2018:8:7 17:00:00";
+				Date expectDate=df.parse(a);
+				Date actualDate=df.parse(b);
+				System.out.println(expectDate);
+				System.out.println(actualDate);
+				System.out.println(service.countOverTime(expectDate, actualDate));
+				System.out.println(service.countOverTimeFee(expectDate, actualDate, "单人间", 1));
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				session.close();
+			}
+		}
+}

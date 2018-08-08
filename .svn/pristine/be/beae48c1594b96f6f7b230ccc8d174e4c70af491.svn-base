@@ -1,4 +1,4 @@
-package com.hotelsystem.service;
+package com.hotelsystem.service.user.comment;
 import java.util.List;
 import com.hotelsystem.bean.CommentBean;
 import com.hotelsystem.bean.ManagerLoginBean;

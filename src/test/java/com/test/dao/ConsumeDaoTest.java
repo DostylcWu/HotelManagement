@@ -4,10 +4,13 @@ import com.hotelsystem.bean.ConsumeBean;
 import com.hotelsystem.bean.HotelDiscountBean;
 import com.hotelsystem.dao.IConsumeDao;
 import com.hotelsystem.dao.IHotelDiscountDao;
+import com.hotelsystem.dao.SerialDao;
 import com.test.util.MybatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -42,5 +45,14 @@ public class ConsumeDaoTest {
         } finally {
             session.close();
         }
+    }
+    @Test
+    public void test3() throws ParseException {
+        SqlSession session=MybatisUtil.getSqlSession();
+        SerialDao serialDao=session.getMapper(SerialDao.class);
+        String a="2018-1-1 00:00:00";
+        String b="2018-2-2 00:00:00";
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        serialDao.findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo(sdf.parse(a),sdf.parse(b));
     }
 }

@@ -24,11 +24,13 @@
  	</resultMap>
  	
  	<select id="findReservePeopleByPeopleName" parameterType="String" resultMap="PeopleMapByName">
- 		select * from reserve_people where rp_name=#{name} and flag=0
+ 		select * from reserve_people where rp_name like #{name} and flag=0
  	</select>
  	<resultMap type="ReservePeopleBean" id="PeopleMapByName">
  		<id property="id" column="rp_id"/>
-  	<result property="name" column="rp_name"/>
+  		<result property="name" column="rp_name"/>
+  		<result property="tel" column="rp_tel"/>
+  		<result property="message" column="rp_msg"/>
   	<collection property="reserveRoomList" ofType="ReserveRoomBean" resultMap="roomMapByName"></collection>
  	</resultMap>
  	<resultMap type="ReserveRoomBean" id="roomMapByName">
@@ -47,13 +49,13 @@
  	<update id="updateReservePeople" parameterType="ReservePeopleBean">
  		update reserve_people 
  		<set> 
- 			<if test="tel != null">rp_tel=#{tel}</if>
- 			<if test="message != null">rp_msg=#{message}</if>
+ 			<if test="tel != null">rp_tel=#{tel},</if>
+ 			<if test="message != null">rp_msg=#{message},</if>
  			<if test="name != null">rp_name=#{name}</if>
  		</set> 
  		where rp_id=#{id} and flag=0;
  	</update>
- 	<update id="deleteReservePeople" parameterType="ReservePeopleBean">
+ 	 <update id="deleteReservePeople" parameterType="ReservePeopleBean">
  		update reserve_people set flag=1 where rp_id=#{id}
- 	</update>
+ 	</update> 
  </mapper>

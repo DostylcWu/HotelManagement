@@ -26,7 +26,7 @@ c_alipay_id
 </sql>
 
     <!--auto generated Code-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="consumeBean.conId">
+    <insert id="insert" >
         INSERT INTO consume (
             c_id,
             c_ci_id,

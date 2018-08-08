@@ -9,17 +9,16 @@
  	<resultMap type="CheckInPersonBean" id="map">
  		<id property="id" column="cp_id"/>
   		<result property="name" column="cp_name"/>
-  		<association property="reserveRoomId" column="cp_rr_id" 
-  			javaType="ReserveRoomBean" 
-  			select="com.hotelsystem.mapper.ReserveRoomMapper.selectById">
-  		</association>
  	</resultMap>
  	
- 	<insert id="insertCheckInPerson" parameterType="CheckInPersonBean">
+ 	<insert id="insertCheckInPerson" parameterType="CheckInPersonBean"  keyProperty="id" useGeneratedKeys="true">
  		insert into checkin_person(cp_name,cp_rr_id) values (#{name},#{reserveRoom.id})
  	</insert>
- 	<update id="updateCheckInPerson" parameterType="CheckInPersonBean">
+ 	<update id="updateCheckInPerson" parameterType="CheckInPersonBean" >
  		update checkin_person set cp_name=#{name} where cp_id=#{id}
+ 	</update>
+ 	<update id = "updateCheckInPersonByRoomId" parameterType = "CheckInPersonBean">
+ 		update checkin_person set cp_name=#{name} where cp_rr_id=#{reserveRoom.id}
  	</update>
  	<update id="deleteCheckInPerson" parameterType="CheckInPersonBean">
  		update checkin_person set flag=1 where cp_id=#{id}

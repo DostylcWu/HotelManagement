@@ -1,0 +1,42 @@
+package com.hotelsystem.service.user.impl;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.hotelsystem.bean.ReserveRoomBean;
+import com.hotelsystem.dao.IReserveRoomDao;
+import com.hotelsystem.service.user.IReserveRoomService;
+import com.hotelsystem.utils.MybatisUtil;
+
+@Service
+public class ReserveRoomServiceImpl implements IReserveRoomService{
+	@Autowired
+	private IReserveRoomDao dao;
+
+	@Override
+	public boolean addReserve(ReserveRoomBean bean) {
+		SqlSession session = MybatisUtil.getSqlSession(true);
+		int i = dao.insertReserveRoom(bean);
+		return false;
+	}
+
+	@Override
+	public boolean updateReserve(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteReserve(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String checkData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+}

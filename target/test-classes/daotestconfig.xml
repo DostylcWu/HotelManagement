@@ -37,5 +37,6 @@
     <mapper resource="com/hotelsystem/mapper/RoomStateMapper.xml"></mapper>
     <mapper resource="com/hotelsystem/mapper/RoomTypeMapper.xml"></mapper>
       <mapper resource="com/hotelsystem/mapper/ConsumeMapper.xml"></mapper>
+      <mapper resource="com/hotelsystem/mapper/SerialMapper.xml"></mapper>
   </mappers>
 </configuration>

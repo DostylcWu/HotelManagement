@@ -8,17 +8,27 @@
   	
   	<!-- 查询超时收费规则 -->
   	<select id="findHotelOverTimeRule" resultMap="overTimeMap">
-   		select * from hotel_overtime; 
+   		select * from hotel_overtime where flag=0; 
   	</select>
   	<resultMap id="overTimeMap" type="HotelOverTimeBean">
   	    <id property="id" column="o_id"></id>
-  		<result property="endTime" column="o_etime"></result>
-  		<result property="overTimeMoney" column="o_money"></result>
+  		<result property="overHalfDayStartTime" column="o_etime1"></result>
+  		<result property="overAllDayStartTime" column="o_etime2"></result>
   	</resultMap>
   	
-  	<!-- 修改规定退房时间 -->
-  	<update id="updateEndTime" parameterType="Date">
-  		update hotel_overtime set o_etime=#{newEndTime} where o_id=1; 
+  	<!-- 修改退房时间规定 -->
+  	<update id="updateOverTimeRule" parameterType="Date">
+  		update hotel_overtime
+  		<set>
+  		  <if test="overHalfDayStartTime!=null">
+  		     o_etime1=#{overHalfDayStartTime},
+  		  </if>
+  		  <if test="overAllDayStartTime!=null">
+  		     o_etime2=#{overAllDayStartTime},
+  		  </if>
+  		</set>
+  		where o_id=1
+  		;
   	</update>
   	
   	  	
