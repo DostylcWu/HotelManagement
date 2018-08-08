@@ -1,0 +1,169 @@
+package com.hotelsystem.service.user.impl;
+
+
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.hotelsystem.bean.UserInfoBean;
+import com.hotelsystem.bean.UserLoginBean;
+import com.hotelsystem.dao.ILoginAndRegisterDao;
+import com.hotelsystem.service.user.ILoginRegisterService;
+import com.hotelsystem.utils.MybatisUtil;
+
+
+/**
+ * @ClassNmae ILoginRegisterServiceImpl
+ * @author 刘开庭
+ * @Descrption TODO
+ * @Date 2018/8/7
+ * @version 1.0
+ */
+public class ILoginRegisterServiceImpl implements ILoginRegisterService{
+	
+	//账号登录验证
+	@Override
+	public String accountLogin(String account, String pass) {
+		String result="登陆失败";
+		String realPass=null;
+		//对输入信息基本的格式检测
+		if(account==null ||pass==null){
+			return result;
+		}else if(account.equals("")){
+			result="账号不能为空";
+			return result;
+		}else if(pass.equals("")){
+			result="密码不能为空";
+			return result;
+		}else if(!(account.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$"))){
+			result="手机号格式有误，请重新输入.";
+			return result;
+		}else if(!(pass.matches("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$"))){
+			result="您的密码格式有误";
+			return result;
+		}
+		//对密码进行加密
+//		String aesPass="";
+//		try {
+//			aesPass=AesEncodeUtil.change("l12345koasii32412");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+		//sql工厂获取，整合时需要修改
+		SqlSession session=MybatisUtil.getSqlSession(true);
+		ILoginAndRegisterDao dao=session.getMapper(ILoginAndRegisterDao.class);
+		realPass=dao.selectPass(account);
+		session.close();
+		//对密码验证
+		if(realPass==null){
+			result="此账号不存在";
+			return result;
+		}else if(!(realPass.equals(pass))){
+			result="密码错误。";
+			return result;
+		}else if(realPass.equals(pass)){
+			result="登陆成功";
+		}
+		return result;
+	}
+	
+	
+	//手机登陆验证
+	@Override
+	public String telLogin(String realAccount,String account, String realCode,String code) {
+		String result="登陆失败";
+		if(!(realAccount.equals(account))){
+			result="手机号有误，或验证码过期";
+			return result;
+		}
+		else if(code==null||code.equals("")){
+			result="验证码有误";
+			return result;
+		}else if(!(realCode.equals(code))){
+			result="验证码错误";
+			return result;
+		}else if(realCode.equals(code)){
+			//此处整合后需要改
+			SqlSession session=MybatisUtil.getSqlSession(true);
+			ILoginAndRegisterDao dao=session.getMapper(ILoginAndRegisterDao.class);
+			String pass=dao.selectPass(account);
+			session.close();
+			if(pass!=null){
+				result="登陆成功";
+				return result;
+			}else{
+				result="不存在此账号";
+				return result;
+			}
+		}
+		return result;
+	}
+	//新增用户
+	@Override
+	public String newUser(UserLoginBean bean1, UserInfoBean bean2) {
+		String result="注册失败";
+		String pass=null;
+		//对输入信息基本的格式检测
+		if(bean1.getAccount()==null
+				||bean1.getPass()==null
+				||bean2.getIden()==null
+				||bean2.getName()==null
+				||bean2.getEmail()==null){
+			return result;
+		}else if(bean1.getAccount().equals("")){
+			result="账号不能为空";
+			return result;
+		}else if(bean1.getPass().equals("")){
+			result="密码不能为空";
+			return result;
+		}else if(bean2.getName().equals("")){
+			result="姓名不能为空";
+			return result;
+		}else if(bean2.getIden().equals("")){
+			result="身份证号不能为空";
+			return result;
+		}
+		
+		//开启
+		SqlSession session=MybatisUtil.getSqlSession(true);
+		ILoginAndRegisterDao dao=session.getMapper(ILoginAndRegisterDao.class);
+		pass=dao.selectPass(bean1.getAccount());
+		if(pass==null){
+			dao.insertLogin(bean1);
+			bean2.setUlb(bean1);
+			dao.insertInfo(bean2);
+		}else{
+			result="该账号已被使用";
+		}
+		session.close();
+		return null;
+	}
+
+//	判断是否存在此用户
+	@Override
+	public String isUser(String account) {
+		String result="手机号格式有误";
+		String pass=null;
+		//对输入信息基本的格式检测
+		if(account==null ||account.equals("")){
+			return result;
+		}else if(!(account.matches("^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\\d{8}$"))){
+			result="手机号格式有误，请重新输入.";
+			return result;
+		}
+
+		//sql工厂获取，整合时需要修改
+		SqlSession session=MybatisUtil.getSqlSession(true);
+		ILoginAndRegisterDao dao=session.getMapper(ILoginAndRegisterDao.class);
+		pass=dao.selectPass(account);
+		session.close();
+		if(pass!=null){
+			result="存在此账号";
+		}else{
+			result="不存在此账号";
+		}
+		
+		return result;
+	}
+
+}
+

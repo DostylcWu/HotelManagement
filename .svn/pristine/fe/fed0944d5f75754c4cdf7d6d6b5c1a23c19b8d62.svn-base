@@ -1,0 +1,15 @@
+package com.hotelsystem.service.user;
+
+import com.hotelsystem.bean.UserInfoBean;
+import com.hotelsystem.bean.UserLoginBean;
+
+public interface ILoginRegisterService {
+	//用户账号登陆验证
+	public String accountLogin(String account,String pass);
+	//手机号登陆
+	public String telLogin(String realAccount,String account,String realCode,String code);
+	//账户注册
+	public String newUser(UserLoginBean bean1,UserInfoBean bean2);
+	//检测账号是否存在
+	public String isUser(String account);
+}

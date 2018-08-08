@@ -1,0 +1,25 @@
+package com.hotelsystem.service.user.impl;
+
+import com.hotelsystem.service.user.IChangeInfoService;
+
+public class IChangeInfoServiceImpl implements IChangeInfoService {
+	//修改密码
+	@Override
+	public String changePass(String pass, String account) {
+		String result="密码更新失败";
+		return result;
+	}
+//	修改手机号
+	@Override
+	public String changeAccount(String account, int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+//修改邮箱
+	@Override
+	public String changeMail(String mail, String account) {
+		String result="邮箱更新失败";
+		return result;
+	}
+
+}

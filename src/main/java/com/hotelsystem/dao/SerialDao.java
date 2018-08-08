@@ -45,7 +45,9 @@ public interface SerialDao {
      */
     List<SerialBean> findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo(@Param("minSTime")Date minSTime,@Param("maxSTime")Date maxSTime);
 
-
+    /**
+     *
+     */
 
 
 

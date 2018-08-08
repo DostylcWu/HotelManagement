@@ -1,0 +1,21 @@
+package com.hotelsystem.service.user;
+
+import com.hotelsystem.bean.CheckInPersonBean;
+import com.hotelsystem.bean.ReserveNumberBean;
+import com.hotelsystem.bean.ReservePeopleBean;
+import com.hotelsystem.bean.ReserveRoomBean;
+
+public interface IReserveRoomService {
+	// 添加预订人
+	public boolean addReservePeople(ReservePeopleBean bean);
+	// 添加预定
+	public boolean addReserveRoom(ReserveRoomBean bean);
+	// 添加预定房间数量
+	public boolean addReserveNumber(ReserveNumberBean bean);
+	// 添加入住人信息
+	public boolean addCheckInPerson(CheckInPersonBean bean);
+	// 修改预定
+	public boolean updateReserve(int id);
+	// 删除预定
+	public boolean deleteReserve(int id);
+}

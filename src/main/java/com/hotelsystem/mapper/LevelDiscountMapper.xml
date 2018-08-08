@@ -20,6 +20,6 @@
 <resultMap type="LevelDiscountBean" id="discountMap">
 		<id column="c_id" property="classId" />
 		<result column="c_name" property="className"/>
-		<result column="u_discount" property="classDiscount" />
+		<result column="c_discount" property="classDiscount" />
 	</resultMap>
 </mapper>

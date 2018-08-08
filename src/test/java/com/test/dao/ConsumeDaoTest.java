@@ -1,7 +1,9 @@
 package com.test.dao;
 
+import com.hotelsystem.bean.CheckInBean;
 import com.hotelsystem.bean.ConsumeBean;
 import com.hotelsystem.bean.HotelDiscountBean;
+import com.hotelsystem.dao.ICheckInDao;
 import com.hotelsystem.dao.IConsumeDao;
 import com.hotelsystem.dao.IHotelDiscountDao;
 import com.hotelsystem.dao.SerialDao;
@@ -54,5 +56,12 @@ public class ConsumeDaoTest {
         String b="2018-2-2 00:00:00";
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         serialDao.findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo(sdf.parse(a),sdf.parse(b));
+    }
+    @Test
+    public void test4(){
+        SqlSession session=MybatisUtil.getSqlSession();
+        ICheckInDao checkInDao=session.getMapper(ICheckInDao.class);
+        CheckInBean checkInBean=checkInDao.findById("180808ANG8DYDA5P");
+        System.out.println(checkInBean);
     }
 }

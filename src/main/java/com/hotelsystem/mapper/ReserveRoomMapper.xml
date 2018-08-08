@@ -77,7 +77,7 @@
 		update reserve_room set flag=1 where rr_id=#{id}
 	</update>
 	
-	<select id="findReserveCountByTypeId" resultType="int">
+	<select id="findReserveCountByTypeName" resultType="int">
   	select count(*) from vi_reserveroom where rt_name = #{typeName} and ((rr_in &lt; #{dateStart} and rr_in &gt; #{dateEnd}) or (rr_out &lt; #{dateStart} and rr_out &gt; #{dateEnd}));	
  	</select>
 </mapper>

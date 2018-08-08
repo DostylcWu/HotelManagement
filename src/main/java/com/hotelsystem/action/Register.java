@@ -19,18 +19,20 @@ import com.hotelsystem.utils.SendMessageCode;
 @Controller
 public class Register {
 	@RequestMapping(name="register.action")
-	public @ResponseBody String register(@RequestParam String phoneNumber){
-		System.out.println("手机号:"+phoneNumber);
+	public @ResponseBody String register(@RequestParam String phoneNumber) {
+		/*System.out.println("手机号:"+phoneNumber);
 		try {
 			String code = SendMessageCode.sendCode(phoneNumber);
 			System.out.println("消息码:"+code);
 		} catch (ClientException e) {
 			e.printStackTrace();
 		}
-		
-		
+
+
 		return "1234";
-		
-		
+
+
+	}*/
+		return "11";
 	}
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotelsystem.dao.ICheckInDao">
+    <resultMap id="checkInMap" type="com.hotelsystem.bean.CheckInBean">
+        <id property="id" column="ci_id"></id>
+        <result property="arriveTime" column="ci_arrive"></result>
+        <result property="leaveTime" column="ci_leave"></result>
+        <result property="stayDays" column="ci_day"></result>
+        <result property="pledgeMoney" column="ci_pledge"></result>
+        <result property="paidMoney" column="ci_account"></result>
+        <association property="room" javaType="com.hotelsystem.bean.RoomInfoBean">
+            <id property="id" column="ri_id"></id>
+            <result property="floor" column="ri_floor"></result>
+            <association property="roomState" javaType="RoomStateBean" resultMap="stateMap"/>
+            <association property="roomType" javaType="RoomTypeBean" resultMap="typeMap"/>
+        </association>
+    </resultMap>
+    <resultMap id="stateMap" type="RoomStateBean">
+        <id property="id" column="rs_id"></id>
+        <result property="name" column="rs_name"></result>
+    </resultMap>
+    <resultMap id="typeMap" type="RoomTypeBean">
+        <id property="id" column="rt_id"></id>
+        <result property="name" column="rt_name"></result>
+        <result property="price" column="rt_price"></result>
+        <result property="img" column="rt_img"></result>
+        <result property="people" column="rt_people"></result>
+        <result property="area" column="rt_area"></result>
+        <result property="bedType" column="rt_bedtype"></result>
+        <result property="netType" column="rt_nettype"></result>
+        <result property="window" column="rt_window"></result>
+        <result property="breakfirst" column="rt_breakfirst"></result>
+        <result property="noSmoking" column="rt_nosmoking"></result>
+    </resultMap>
+    <select id="findById" parameterType="String" resultMap="checkInMap">
+        select * from checkin_roominfo_type_state where ci_id=#{ci_id}
+    </select>
+</mapper>

@@ -1,0 +1,73 @@
+package com.hotelsystem.service.user.impl;
+
+import com.aliyuncs.exceptions.ClientException;
+import com.hotelsystem.service.user.ISendMessageCodeService;
+import com.hotelsystem.utils.SendMessageCode;
+
+public class ISendMessageCodeServiceImp implements ISendMessageCodeService {
+	
+	//登陆验证码
+	@Override
+	public String loginCode(String tel) {
+		//发送验证码
+		String code="";
+		int j=10;
+		for(int i=0;i<6;i++){
+			j=(int) (Math.random()*10);
+			code+=j;
+		}
+		try {
+			SendMessageCode.sendCode(tel,code,"SMS_141660009");
+		} catch (ClientException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code;
+	}
+
+	//注册验证码
+	@Override
+	public String registerCode(String tel) {
+		//发送验证码
+		String code="";
+		int j=10;
+		for(int i=0;i<6;i++){
+			j=(int) (Math.random()*10);
+			code+=j;
+		}
+		try {
+			SendMessageCode.sendCode(tel,code,"SMS_141635004");
+		} catch (ClientException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code;
+	}
+
+	//找回密码验证码
+	@Override
+	public String findPassCode(String tel) {
+		//发送验证码
+		String code="";
+		int j=10;
+		for(int i=0;i<6;i++){
+			j=(int) (Math.random()*10);
+			code+=j;
+		}
+		try {
+			SendMessageCode.sendCode(tel,code,"SMS_141655003");
+		} catch (ClientException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code;
+	}
+	
+	//换绑手机验证码
+	@Override
+	public String changeTelCode(String tel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
