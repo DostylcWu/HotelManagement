@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 给当前的xml的文件命名，区分sql块，以后会出现多个sql块 -->
+<mapper namespace="com.hotelsystem.dao.IManagerRecordDao">
+<insert id="addupManagerRecord" parameterType="ManagerRecordBean" keyProperty="mrId" useGeneratedKeys="true">
+INSERT INTO manager_record(mr_ontime,u_mr_id)VALUES(#{mrOnTime},#{mlb.userId})
+</insert>
+<update id="addOffManagerRecord" parameterType="ManagerRecordBean">
+UPDATE manager_record SET mr_offtime=#{mrOffTime} where mr_id=#{mrId};
+</update>
+</mapper>

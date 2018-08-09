@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @ClassName ConsumeDaoTest
@@ -63,5 +64,19 @@ public class ConsumeDaoTest {
         ICheckInDao checkInDao=session.getMapper(ICheckInDao.class);
         CheckInBean checkInBean=checkInDao.findById("180808ANG8DYDA5P");
         System.out.println(checkInBean);
+    }
+    @Test
+    public void test5(){
+        SqlSession session=MybatisUtil.getSqlSession();
+        ICheckInDao checkInDao=session.getMapper(ICheckInDao.class);
+        List<CheckInBean> checkInBeans=checkInDao.findAllCheckIn();
+        System.out.println(checkInBeans);
+    }
+    @Test
+    public void test6(){
+        SqlSession session=MybatisUtil.getSqlSession();
+        IConsumeDao consumeDao=session.getMapper(IConsumeDao.class);
+        List<ConsumeBean> consumeBeans=consumeDao.find();
+        System.out.println(consumeBeans.size());
     }
 }

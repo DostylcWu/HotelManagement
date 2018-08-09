@@ -17,4 +17,6 @@ public interface ICheckInDao {
 	 *
 	 */
 	CheckInBean findById(@Param("ci_id")String ci_id);
+
+
 }

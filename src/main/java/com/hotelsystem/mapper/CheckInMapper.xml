@@ -36,4 +36,7 @@
     <select id="findById" parameterType="String" resultMap="checkInMap">
         select * from checkin_roominfo_type_state where ci_id=#{ci_id}
     </select>
+    <select id="findAllCheckIn" resultMap="checkInMap">
+        select  * from checkin_roominfo_type_state
+    </select>
 </mapper>

@@ -27,7 +27,7 @@
   		  <if test="bean.endTime!=null">
   		     d_etime=#{bean.endTime},
   		  </if>
-  		  <if test="bean.value!=null">
+  		  <if test="bean.value!=0">
   		     d_value=#{bean.value},
   		  </if>
   		</set>
@@ -44,5 +44,9 @@
   	<update id="deleteDiscountById" parameterType="int">
   		update hotel_discount set flag=1 where d_id=#{id} ;
   	</update>
-  	  	
+  	
+  	<!-- 查询酒店所有有效的全场折扣 -->
+  	<select id="findAllDiscount"  resultMap="discountMap">
+   		select * from hotel_discount where flag=0; 
+  	</select>  	
 </mapper>

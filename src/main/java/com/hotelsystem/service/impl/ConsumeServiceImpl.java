@@ -1,5 +1,6 @@
 package com.hotelsystem.service.impl;
 
+import com.hotelsystem.bean.CheckInBean;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,23 +14,12 @@ public class ConsumeServiceImpl implements IConsumeService{
     @Resource
     private IConsumeDao iConsumeDao;
 
+    /**
+     * @param cid
+     * @return
+     */
     @Override
-    public int insert(ConsumeBean consumeBean){
-        return iConsumeDao.insert(consumeBean);
-    }
-
-    @Override
-    public int insertSelective(ConsumeBean consumeBean){
-        return iConsumeDao.insertSelective(consumeBean);
-    }
-
-    @Override
-    public int insertList(List<ConsumeBean> consumeBeans){
-        return iConsumeDao.insertList(consumeBeans);
-    }
-
-    @Override
-    public int update(ConsumeBean consumeBean){
-        return iConsumeDao.update(consumeBean);
+    public List<CheckInBean> listCheckIn(String[] cid) {
+        return null;
     }
 }

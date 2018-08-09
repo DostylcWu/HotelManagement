@@ -30,6 +30,12 @@ public interface IConsumeDao {
 
     int updateConFlagByConId(@Param("updatedConFlag")Integer updatedConFlag,@Param("conId")String conId);
 
+    List<ConsumeBean> find();
+
+
+
+
+
 
 
 
