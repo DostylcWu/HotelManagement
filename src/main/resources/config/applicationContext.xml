@@ -52,6 +52,19 @@
         <property name="configLocation" value="classpath:config/config.xml"/>
         <!--用于配置mapper映射xml-->
         <property name="mapperLocations" value="classpath*:com/hotelsystem/mapper/*.xml"/>
+        <!-- 配置分页插件 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            helperDialect=mysql
+                            reasonable=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
     </bean>
 
 

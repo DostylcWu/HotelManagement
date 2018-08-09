@@ -13,15 +13,6 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${checkInBeans}" var="check">
-    ${check.id}
-    ${check.room.id}
-    ${check.arriveTime}
-    ${check.leaveTime}
-    ${check.stayDays}
-    ${check.pledgeMoney}
-    ${check.paidMoney}
-    <br>
-</c:forEach>
+
 </body>
 </html>

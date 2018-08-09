@@ -10,4 +10,12 @@ INSERT INTO manager_record(mr_ontime,u_mr_id)VALUES(#{mrOnTime},#{mlb.userId})
 <update id="addOffManagerRecord" parameterType="ManagerRecordBean">
 UPDATE manager_record SET mr_offtime=#{mrOffTime} where mr_id=#{mrId};
 </update>
+<select id="findIdbyManagerRecord" resultMap="recordMap">
+SELECT * FROM manager_record WHERE mr_id=#{id};
+</select>
+<resultMap type="ManagerRecordBean" id="recordMap">
+		<id column="mr_id" property="mrId" />
+		<result column="mr_ontime" property="mrOnTime"/>
+		<result column="mr_offtime" property="mrOffTime"/>
+</resultMap>
 </mapper>

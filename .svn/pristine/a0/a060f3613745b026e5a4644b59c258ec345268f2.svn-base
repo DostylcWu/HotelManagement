@@ -1,0 +1,80 @@
+package com.project.action;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hotelsystem.bean.RoomTypeBean;
+
+import com.hotelsystem.service.user.IRoomTypeService;
+import com.hotelsystem.service.user.impl.RoomTypeServiceImpl;
+
+
+
+/**
+ * 
+ * @ClassName: Register 
+ * @Description: TODO
+ * @author jhz
+ * @date 2018年8月4日 下午12:10:04 
+ * @version v1.0
+ */
+@Controller
+public class RoomTypeAction {
+	
+	@RequestMapping("/roomTypeDetail.action")
+	public @ResponseBody ModelAndView showDiscount(@RequestBody RoomTypeBean roomType,HttpServletRequest req, HttpServletResponse res) {
+	
+		System.out.println(roomType + "roomtype");
+		// 获取会话对象，因为会跳转url，所有不能用request。
+		System.out.println("进入到roomTypeDetail.action");
+		HttpSession session = req.getSession();
+		System.out.println(roomType);
+		
+		// 在点击的时候获取到他的房间类型
+		IRoomTypeService roomTypeService = new RoomTypeServiceImpl();
+		Map<String, Double> priceMap = new HashMap<String, Double>();
+		priceMap = roomTypeService.getPriceMap(roomType);
+		
+		ModelAndView model = new ModelAndView();
+		session.setAttribute("priceMap", priceMap);
+		// 重定向
+		model.setViewName("forward:jsp/showpricemap.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/roomtype.action")
+	public ModelAndView showRoomType(HttpServletRequest req, HttpServletResponse res) {
+	
+		System.out.println("进入到roomtype.action中");
+		
+		// 获取会话对象，因为会跳转url，所有不能用request。
+		HttpSession session = req.getSession();
+		// 房间类型列表
+		List<RoomTypeBean> roomTypeList = new ArrayList<RoomTypeBean>();
+		// 获取所有的房间类型
+		IRoomTypeService roomTypeService = new RoomTypeServiceImpl();
+		roomTypeList = roomTypeService.getRoomType();
+		session.setAttribute("roomTypeList", roomTypeList);
+		ModelAndView model = new ModelAndView();
+		// 重定向
+		model.setViewName("redirect:jsp/showroom.jsp");
+		System.out.println(roomTypeList);
+		return model;	
+	}
+	
+}

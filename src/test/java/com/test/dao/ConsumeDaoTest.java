@@ -79,4 +79,11 @@ public class ConsumeDaoTest {
         List<ConsumeBean> consumeBeans=consumeDao.find();
         System.out.println(consumeBeans.size());
     }
+    @Test
+    public void test7(){
+        SqlSession session=MybatisUtil.getSqlSession();
+        IHotelDiscountDao hotelDiscountDao=session.getMapper(IHotelDiscountDao.class);
+        HotelDiscountBean hotelDiscountBean=hotelDiscountDao.findDiscountByDate(new Date());
+        System.out.println(hotelDiscountBean.getValue());
+    }
 }

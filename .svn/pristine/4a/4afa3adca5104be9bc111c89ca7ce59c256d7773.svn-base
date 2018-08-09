@@ -1,0 +1,50 @@
+package com.hotelsystem.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hotelsystem.service.user.ILoginRegisterService;
+import com.hotelsystem.service.user.ISendMessageCodeService;
+
+@Controller
+public class UserRegisterAction {
+	@Autowired
+	private ILoginRegisterService lrService;
+	@Autowired
+	private ISendMessageCodeService smService;
+	
+	@RequestMapping("/judgeAccount.action")
+	public @ResponseBody String judgeAccount(HttpServletRequest req,String account){
+		String result="注册失败";
+		result=smService.judgeAccount(account);
+		if(result.equals("不存在此账号")){
+			result="此号可以注册";	
+			HttpSession session=req.getSession(true);
+			String realTel=(String) session.getAttribute("registerTel");
+		}else if(result.equals("存在此账号")){
+			result="此手机号已被注册，请输入其他手机号";
+		}
+		return result;
+	}
+	
+	@RequestMapping("/registerCode.action")
+	public @ResponseBody String registerCode(HttpServletRequest req,String account){
+		String result="注册失败";
+		
+		
+		return result;
+	}
+	
+	@RequestMapping("/accountLogin.action")
+	public @ResponseBody String userRegister(HttpServletRequest req,String account,String pass){
+		String result="注册失败";
+		
+		
+		return result;
+	}
+}

@@ -37,6 +37,9 @@
         select * from checkin_roominfo_type_state where ci_id=#{ci_id}
     </select>
     <select id="findAllCheckIn" resultMap="checkInMap">
-        select  * from checkin_roominfo_type_state
+        select  * from checkin_roominfo_type_state where cflag=0 and iflag=0 and sflag=0 and tflag=0
+    </select>
+    <select id="findExitCheckIn" resultType="com.hotelsystem.bean.CheckInBean">
+select  * from checkin_roominfo_type_state where cflag=1 and iflag=1 and sflag=1 and tflag=1
     </select>
 </mapper>

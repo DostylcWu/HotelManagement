@@ -5,8 +5,8 @@
 <!-- 给当前的xml的文件命名，区分sql块，以后会出现多个sql块 -->
 <mapper namespace="com.hotelsystem.dao.IManagerLoginDao">
 	<!-- 删除管理员 -->
-	<delete id="delManagerLogin" parameterType="int">
-		update manager_login set flag=1 where u_id=#{userId} and u_id!=1;
+	<delete id="delManagerLogin" parameterType="String">
+		update manager_login set flag=1 where u_id=#{userName} and u_id!=1 and flag=0;
 	</delete>
 	<!-- 添加管理员操作 -->
 	<insert id="addManagerLogin" parameterType="ManagerLoginBean">
@@ -61,7 +61,7 @@
 		<result column="u_identity" property="userIdentity"/>
 	</resultMap>
 	<!-- 根据管理员名查询密码 -->
-	<select id="findByName" parameterType="String" resultMap="LoginMap4">
+	<select id="login" parameterType="ManagerLoginBean" resultMap="LoginMap4">
 		SELECT u_pwd FROM manager_login where u_name=#{userName} and flag=0
 	</select>
 	<resultMap type="String" id="LoginMap4">

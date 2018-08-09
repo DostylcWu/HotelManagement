@@ -3,6 +3,7 @@ package com.hotelsystem.service;
 import com.hotelsystem.bean.CheckInBean;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName ICheckInService
@@ -16,5 +17,5 @@ public interface ICheckInService {
      * 查询所有房间号
      * @return
      */
-    List<CheckInBean> queryAll();
+    Map<String,Object> queryAll();
 }

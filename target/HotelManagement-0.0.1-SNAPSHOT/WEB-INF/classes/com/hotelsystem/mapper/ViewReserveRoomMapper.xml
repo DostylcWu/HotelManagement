@@ -3,7 +3,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.hotelsystem.dao.IViewReserveRoomDao">
  	<select id="findAll" parameterType="ViewReserveRoomBean" resultMap="map">
- 		select * from vi_reserveroom;
+ 		select * from vi_reserveroom where ;
  	</select>
  	<resultMap type="com.hotelsystem.dao.IViewReserveRoomDao" id="map">
  		<id property="id" column="rr_id"></id>

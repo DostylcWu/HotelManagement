@@ -18,5 +18,11 @@ public interface ICheckInDao {
 	 */
 	CheckInBean findById(@Param("ci_id")String ci_id);
 
+	/**
+	 * 查询已经结账的订单
+	 * @return
+	 */
+	List<CheckInBean> findExitCheckIn();
+
 
 }
