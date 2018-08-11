@@ -1,5 +1,6 @@
 package com.hotelsystem.service;
 
+import com.github.pagehelper.PageInfo;
 import com.hotelsystem.bean.CheckInBean;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface ICheckInService {
      * 查询所有房间号
      * @return
      */
-    Map<String,Object> queryAll();
+    PageInfo queryAll(int pageNum);
 }

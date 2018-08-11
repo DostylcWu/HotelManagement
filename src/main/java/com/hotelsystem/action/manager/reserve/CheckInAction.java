@@ -1,14 +1,15 @@
 package com.hotelsystem.action.manager.reserve;
 
-import com.hotelsystem.bean.CheckInBean;
+import com.github.pagehelper.PageInfo;
 import com.hotelsystem.service.ICheckInService;
+import com.hotelsystem.service.manager.IOverTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-import java.util.Map;
+import java.util.Date;
 
 /**
  * @ClassName CheckInAction
@@ -23,18 +24,18 @@ public class CheckInAction {
 
     private ICheckInService checkInService;
 
+    @Autowired
+    private IOverTimeService overTimeService;
+
     /**
      * json传递
      * @return
      */
     @RequestMapping("/CheckInList.action")
-    public ModelAndView CheckInList(){
-        ModelAndView mv=new ModelAndView();
-        Map<String,Object> check=checkInService.queryAll();
-        System.out.println(check);
-        mv.addObject("check",check);
-        System.out.println(check);
-        mv.setViewName("/jsp/ConsumeDetail.jsp");
-        return mv;
+    public @ResponseBody PageInfo CheckInList(@RequestParam Integer currentPage){
+        int i=overTimeService.countOverTime(new Date() , new Date());
+        PageInfo page =checkInService.queryAll(currentPage);
+
+        return page;
     }
 }
