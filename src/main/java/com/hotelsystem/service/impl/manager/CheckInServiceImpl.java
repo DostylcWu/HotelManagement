@@ -40,4 +40,15 @@ public class CheckInServiceImpl implements ICheckInService {
         PageInfo page = new PageInfo(checkInBeans);
         return page;
     }
+
+    /**
+     * 查询id入住信息
+     *
+     * @param id
+     */
+    @Override
+    public CheckInBean queryById(String id) {
+        CheckInBean checkInBean=checkInDao.findById(id);
+        return checkInBean;
+    }
 }

@@ -93,7 +93,7 @@ public class OverTimeServiceImpl implements IOverTimeService{
 		System.out.println("overTime"+overTime);
 		//在算出此房间类型的价格
 		int price=tdao.findRoomPriceByTypeName(typeName);
-		System.out.println("price"+price);
+		//System.out.println("price"+price);
 		//根据超时时间、房间单价、房间数量算出超时费用
 		double overMoney=overTime*price*count*0.5;
 		return overMoney;

@@ -1,6 +1,7 @@
 package com.hotelsystem.action.manager.reserve;
 
 import com.github.pagehelper.PageInfo;
+import com.hotelsystem.bean.CheckInBean;
 import com.hotelsystem.service.ICheckInService;
 import com.hotelsystem.service.manager.IOverTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
@@ -37,5 +39,16 @@ public class CheckInAction {
         PageInfo page =checkInService.queryAll(currentPage);
 
         return page;
+    }
+    /**
+     * 查询详细的入住信息
+     */
+    @RequestMapping("/CheckDetail.action")
+    public ModelAndView checkDetail(@RequestParam String cid){
+        ModelAndView modelAndView=new ModelAndView();
+        CheckInBean checkInBean=checkInService.queryById(cid);
+        modelAndView.addObject("checkInBean",checkInBean);
+        modelAndView.setViewName("/html/checkInDetail.jsp");
+        return modelAndView;
     }
 }

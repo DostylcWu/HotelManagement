@@ -19,4 +19,9 @@ public interface ICheckInService {
      * @return
      */
     PageInfo queryAll(int pageNum);
+
+    /**
+     * 查询id入住信息
+     */
+    CheckInBean queryById(String id);
 }
