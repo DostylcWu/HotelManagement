@@ -1,5 +1,7 @@
 package com.hotelsystem.bean;
 
+
+
 import java.util.Date;
 
 /**

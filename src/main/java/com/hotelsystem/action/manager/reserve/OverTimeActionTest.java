@@ -18,11 +18,11 @@ public class OverTimeActionTest {
     private IOverTimeService oservice;
     @RequestMapping(value="/overTimeFee.action")
     public void findHotelOverTimeRule(){
-        SimpleDateFormat df = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         //预计退房时间2018:08:13 12:00:00
-        String a="2018:08:13 12:00:00";
+        String a="2018-08-13 12:00:00";
         //实际退房时间2018:08:13 12:01:00，超了1分钟
-        String b="2018:08:14 18:00:00";
+        String b="2018-08-13 18:00:00";
         //转成Date类型
         Date expectDate=null;
         Date actualDate=null;

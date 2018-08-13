@@ -24,7 +24,7 @@ public class OverTimeServiceImpl implements IOverTimeService{
 	public int countOverTime(Date expectDate, Date actualDate) {
 		HotelOverTimeBean bean=dao.findHotelOverTimeRule();
 		double r=actualDate.getTime()-expectDate.getTime();
-		System.out.println(r);
+		//System.out.println(r);
 		//定义halfDay为超出多少个半天
 		int halfDay;
 		//定义allDay超出多少个1天
@@ -84,13 +84,13 @@ public class OverTimeServiceImpl implements IOverTimeService{
 	@Override
 	public double countOverTimeFee(Date expectDate, Date actualDate, String typeName,int count) {
         //如果退房时间在规定退房时间之前或两者相等，则返回0，无超时费
-		System.out.println(expectDate.after(actualDate));
+		//System.out.println(expectDate.after(actualDate));
 		if(expectDate.after(actualDate)||expectDate.equals(actualDate)){
 			return 0;
 		}
 		//先算出超过几个半天的时间
 		int overTime=countOverTime(expectDate,actualDate);
-		System.out.println("overTime"+overTime);
+		//System.out.println("overTime"+overTime);
 		//在算出此房间类型的价格
 		int price=tdao.findRoomPriceByTypeName(typeName);
 		//System.out.println("price"+price);
