@@ -9,6 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<%@ page import="static com.hotelsystem.utils.AesEncodeUtil.aesEncrypt" %>
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,6 +30,7 @@
     </ul>
 </div>
 
+
 <div class="formbody">
 
     <div class="formtitle"><span>基本信息</span></div>
@@ -42,14 +46,18 @@
         <li><label>房间价格</label><input  type="text" class="dfinput" disabled="disabled" value="${maps.checkInBean.room.roomType.price}"/><i></i></li>
         <li><label>当前离开时间</label><input  id="timeNow" type="text" class="dfinput" disabled="disabled" value=""/><i></i></li>
         <li><label>实际入住天数</label><input  id="daynow" type="text" class="dfinput" disabled="disabled" value="${maps.overTime}"/><i></i></li>
-        <li><label>预计应收房费</label><input  type="text" class="dfinput" disabled="disabled" value="${maps.money}"/><i></i></li>
+        <li><label>预计应收房费</label><input  id="moeny" type="text" class="dfinput" disabled="disabled" value="${maps.money}"/><i></i></li>
         <li><label>应付房费</label><input  type="text" class="dfinput" value="注意，不能小于预计房费"/><i>人民币</i></li>
         <li><label>是否退房</label><input  type="text" class="dfinput" value=""/><i></i></li>
-        <li><label>&nbsp;</label><input  type="button" class="btn" value="确认退房" /></li>
+        <li><label>&nbsp;</label><input  type="button" class="btn" value="确认退房" onclick="ExitRoom()"/></li>
         <li><label>&nbsp;</label><input  type="button" class="btn" value="返回主页"/></li>
 
     </ul>
 
+    <%
+        String coude=request.getParameter("money");
+        String encrypt = aesEncrypt("coude");
+    %>
 
 </div>
 
@@ -109,6 +117,9 @@ function date(arrtime,leavetime) {
 date("${maps.checkInBean.arriveTime}","${maps.checkInBean.leaveTime}");
 
 
-
+function ExitRoom() {
+    var moenys= "<%=encrypt %>";
+    console.log(moenys);
+}
 </script>
 </html>

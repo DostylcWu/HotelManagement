@@ -8,23 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14d218ca-f0b5-4efb-912f-a13749231c58" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/CheckInAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/CheckInAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/OverTimeActionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/OverTimeActionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CheckInBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/bean/CheckInBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/html/checkInDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/html/checkInDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/action/manager/reserve/CheckInAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/action/manager/reserve/CheckInAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/action/manager/reserve/OverTimeActionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/action/manager/reserve/OverTimeActionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/bean/CheckInBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/bean/CheckInBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/WEB-INF/classes/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/html/checkInDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/HotelManagement-0.0.1-SNAPSHOT/html/checkInDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotelsystem/action/manager/reserve/CheckInAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotelsystem/action/manager/reserve/CheckInAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotelsystem/action/manager/reserve/OverTimeActionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotelsystem/action/manager/reserve/OverTimeActionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotelsystem/bean/CheckInBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotelsystem/bean/CheckInBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,10 +24,34 @@
       <file leaf-file-name="CheckInAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/CheckInAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
+            <state relative-caret-position="714">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsumeDaoTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-37">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ILevelDiscountServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/ILevelDiscountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="849">
+              <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+              <folding>
+                <element signature="e#2084#2085#0" expanded="true" />
+                <element signature="e#2122#2123#0" expanded="true" />
+                <element signature="e#2188#2189#0" expanded="true" />
+                <element signature="e#2232#2233#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,20 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="checkInDetail.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="checkInDetail.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/html/checkInDetail.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="504">
+              <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IOverTimeService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/IOverTimeService.java">
+      <file leaf-file-name="CheckIn.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/js/private/CheckIn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="5" column="25" selection-start-line="2" selection-start-column="7" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -78,7 +87,7 @@
       <file leaf-file-name="OverTimeServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1171">
+            <state relative-caret-position="1230">
               <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
             </state>
           </provider>
@@ -87,8 +96,8 @@
       <file leaf-file-name="AesEncodeUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/utils/AesEncodeUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="48" column="45" lean-forward="true" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+            <state relative-caret-position="585">
+              <caret line="48" column="45" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -96,8 +105,8 @@
       <file leaf-file-name="OverTimeActionTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/OverTimeActionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="195">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderStatusEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/utils/OrderStatusEnum.java">
+      <file leaf-file-name="right.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/right.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="120">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -178,8 +187,9 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="68" />
+    <option name="y" value="108" />
     <option name="width" value="1920" />
     <option name="height" value="1123" />
   </component>
@@ -191,9 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -401,12 +408,45 @@
             <path>
               <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelManagement" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -556,15 +596,16 @@
       <workItem from="1534129044531" duration="9224000" />
       <workItem from="1534144137572" duration="1319000" />
       <workItem from="1534145476436" duration="430000" />
-      <workItem from="1534146307876" duration="4328000" />
+      <workItem from="1534146307876" duration="7171000" />
+      <workItem from="1534156540737" duration="727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15301000" />
+    <option name="totallyTimeSpent" value="18871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="34" width="1920" height="1123" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="1123" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -580,17 +621,16 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942804" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32983795" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32983795" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32983795" />
       <window_info anchor="right" id="Mybatis datasource" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -598,6 +638,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32983795" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
@@ -609,13 +650,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/OverTimeActionTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/checkInDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1695">
+          <caret line="113" column="30" lean-forward="true" selection-start-line="113" selection-start-column="3" selection-end-line="113" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -671,13 +709,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/js/private/CheckIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -747,13 +779,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/js/private/CheckIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -848,13 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/js/private/CheckIn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/ConsumeDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -869,25 +888,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/right.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/ICheckInService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="20" column="12" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/config.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config/springmvc-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -917,48 +923,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/utils/AesEncodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="48" column="45" lean-forward="true" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/IOverTimeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="510">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="51" column="41" lean-forward="true" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/CheckInAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/impl/manager/OverTimeServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/OverTimeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1171">
+        <state relative-caret-position="1230">
           <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/OverTimeActionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="195">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -972,10 +955,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/utils/AesEncodeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="48" column="45" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/right.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/js/private/CheckIn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="2" selection-start-column="7" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/html/checkInDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="504">
+          <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/action/manager/reserve/CheckInAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/test/dao/ConsumeDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hotelsystem/service/manager/impl/ILevelDiscountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="93" column="32" lean-forward="true" selection-start-line="93" selection-start-column="32" selection-end-line="93" selection-end-column="32" />
+          <folding>
+            <element signature="e#2084#2085#0" expanded="true" />
+            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="e#2188#2189#0" expanded="true" />
+            <element signature="e#2232#2233#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
