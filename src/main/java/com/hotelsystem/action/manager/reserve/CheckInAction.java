@@ -2,8 +2,14 @@ package com.hotelsystem.action.manager.reserve;
 
 import com.github.pagehelper.PageInfo;
 import com.hotelsystem.bean.CheckInBean;
+import com.hotelsystem.bean.HotelDiscountBean;
+import com.hotelsystem.bean.MenmbersBean;
 import com.hotelsystem.service.ICheckInService;
+import com.hotelsystem.service.manager.IHotelDiscountService;
+import com.hotelsystem.service.manager.IMenmbersService;
 import com.hotelsystem.service.manager.IOverTimeService;
+import com.hotelsystem.utils.AesEncodeByteUtil;
+import com.hotelsystem.utils.AesEncodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
  * @ClassName CheckInAction
@@ -33,44 +42,107 @@ public class CheckInAction {
     private IOverTimeService overTimeService;
     @Autowired
     private IOverTimeService oservice;
+    @Autowired
+    private IHotelDiscountService hotelDiscountService;
+    @Autowired
+    private IMenmbersService iMenmbersService;
 
     /**
      * json传递
+     *
      * @return
      */
     @RequestMapping("/CheckInList.action")
-    public @ResponseBody PageInfo CheckInList(@RequestParam Integer currentPage){
-        int i=overTimeService.countOverTime(new Date() , new Date());
-        PageInfo page =checkInService.queryAll(currentPage);
+    public @ResponseBody
+    PageInfo CheckInList(@RequestParam Integer currentPage) {
+        int i = overTimeService.countOverTime(new Date(), new Date());
+        PageInfo page = checkInService.queryAll(currentPage);
 
         return page;
     }
+
     /**
      * 查询详细的入住信息
      */
     @RequestMapping("/CheckDetail.action")
-    public ModelAndView checkDetail(@RequestParam String cid){
-        ModelAndView modelAndView=new ModelAndView();
-        CheckInBean checkInBean=checkInService.queryById(cid);
+    public ModelAndView checkDetail(@RequestParam String cid) {
+        ModelAndView modelAndView = new ModelAndView();
+        CheckInBean checkInBean = checkInService.queryById(cid);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         //System.out.println(checkInBean.getArriveTime());
         //超出的房费
-        double money=oservice.countOverTimeFee(checkInBean.getLeaveTime(), new Date(), checkInBean.getRoom().getRoomType().getName(), 1);
-        System.out.println("mp"+money);
-        int overTime=oservice.countOverTime(checkInBean.getLeaveTime(),new Date());
-        overTime=overTime/2+1;
-        if(overTime==1){
-            money=money-checkInBean.getPledgeMoney();
+        double money = oservice.countOverTimeFee(checkInBean.getLeaveTime(), new Date(), checkInBean.getRoom().getRoomType().getName(), 1);
+        int overTime = oservice.countOverTime(checkInBean.getLeaveTime(), new Date());
+        overTime = overTime / 2 + 1;
+        HotelDiscountBean hotelDiscountBean = hotelDiscountService.findDiscountByDate();
+        if (overTime > 1) {
+            money = money - checkInBean.getPledgeMoney() - checkInBean.getPaidMoney();
+            if (hotelDiscountBean != null) {
+                money = money * hotelDiscountBean.getValue();
+            }
+        } else {
+            money = checkInBean.getPledgeMoney();
         }
-
-        System.out.println("overtime"+overTime);
-        System.out.println("moent"+money);
-        Map<String,Object> map=new HashMap<>();
-        map.put("checkInBean",checkInBean);
-        map.put("overTime",overTime);
-        map.put("money",money);
-        modelAndView.addObject("maps",map);
+        Map<String, Object> map = new HashMap<>();
+        map.put("checkInBean", checkInBean);
+        map.put("overTime", overTime);
+        map.put("money", money);
+        map.put("hotel", hotelDiscountBean);
+        modelAndView.addObject("maps", map);
         modelAndView.setViewName("/html/checkInDetail.jsp");
         return modelAndView;
+    }
+
+    /**
+     * 查询会员折扣
+     */
+    @RequestMapping("/VipCheck.action")
+    public @ResponseBody
+    Map<String, Object> vipCheck(@RequestParam String moneys, String phone) {
+        String money = "";
+        String res = "";
+        double memberCount = 1;
+        int vipLeve = 0;
+        try {
+            money = (AesEncodeByteUtil.decryptAES(moneys));
+            //System.out.println(money);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        MenmbersBean menmbersBean = iMenmbersService.checkIdByMenmbers(phone);
+        if (menmbersBean != null) {
+            System.out.println(isNumeric(money));
+            if (isNumeric(money)) {
+                memberCount = menmbersBean.getLb().getClassDiscount();
+                money = String.valueOf((Double.parseDouble(money)) * memberCount);
+                vipLeve = menmbersBean.getLb().getClassId();
+                // res= iMenmbersService.autoUpgrade(money, phone);
+            }
+
+        } else {
+            res = "输入的手机号没有会员优惠";
+        }
+
+        try {
+            money = AesEncodeByteUtil.encryptAES(String.valueOf(money));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Map<String, Object> maps = new HashMap<>();
+        maps.put("money", money);
+        maps.put("res", res);
+        maps.put("memberCount", memberCount);
+        maps.put("vipLeve", vipLeve);
+        return maps;
+    }
+
+    public boolean isNumeric(String str) {
+        Pattern pattern = Pattern.compile("^(\\-?)\\d+(\\.\\d+)?$");
+        Matcher isNum = pattern.matcher(str);
+        if (!isNum.matches()) {
+            return false;
+        }
+        return true;
     }
 }
