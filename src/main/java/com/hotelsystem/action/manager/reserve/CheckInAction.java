@@ -8,15 +8,16 @@ import com.hotelsystem.service.ICheckInService;
 import com.hotelsystem.service.manager.IHotelDiscountService;
 import com.hotelsystem.service.manager.IMenmbersService;
 import com.hotelsystem.service.manager.IOverTimeService;
-import com.hotelsystem.utils.AesEncodeByteUtil;
-import com.hotelsystem.utils.AesEncodeUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import com.hotelsystem.utils.AesEncodeTUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -68,21 +69,35 @@ public class CheckInAction {
     public ModelAndView checkDetail(@RequestParam String cid) {
         ModelAndView modelAndView = new ModelAndView();
         CheckInBean checkInBean = checkInService.queryById(cid);
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         //System.out.println(checkInBean.getArriveTime());
         //超出的房费
+        String a=df.format(checkInBean.getLeaveTime());
+        Date expectDate=null;
+        try {
+            expectDate = df.parse(a);
+
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        //
         double money = oservice.countOverTimeFee(checkInBean.getLeaveTime(), new Date(), checkInBean.getRoom().getRoomType().getName(), 1);
-        int overTime = oservice.countOverTime(checkInBean.getLeaveTime(), new Date());
+        System.out.println(checkInBean.getLeaveTime());
+        int overTime = oservice.countOverTime(expectDate, new Date());
+        System.out.println("ossssss"+overTime);
         overTime = overTime / 2 + 1;
+
         HotelDiscountBean hotelDiscountBean = hotelDiscountService.findDiscountByDate();
         if (overTime > 1) {
-            money = money - checkInBean.getPledgeMoney() - checkInBean.getPaidMoney();
+            money = money  - checkInBean.getPaidMoney()+checkInBean.getRoom().getRoomType().getPrice();
             if (hotelDiscountBean != null) {
                 money = money * hotelDiscountBean.getValue();
             }
         } else {
-            money = checkInBean.getPledgeMoney();
+            money = checkInBean.getRoom().getRoomType().getPrice();
         }
+        money=money- checkInBean.getPledgeMoney();
         Map<String, Object> map = new HashMap<>();
         map.put("checkInBean", checkInBean);
         map.put("overTime", overTime);
@@ -104,7 +119,7 @@ public class CheckInAction {
         double memberCount = 1;
         int vipLeve = 0;
         try {
-            money = (AesEncodeByteUtil.decryptAES(moneys));
+            money = (AesEncodeTUtil.decryptAES(moneys));
             //System.out.println(money);
 
         } catch (Exception e) {
@@ -125,7 +140,7 @@ public class CheckInAction {
         }
 
         try {
-            money = AesEncodeByteUtil.encryptAES(String.valueOf(money));
+            money = AesEncodeTUtil.encryptAES(String.valueOf(money));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -16,10 +16,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>无标题文档</title>
     <link href="html/css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="html/js/aes.js"></script>
+    <script type="text/javascript" src="html/js/pad-zeropadding.js"></script>
     <script type="text/javascript" src="html/js/jquery.js"></script>
-    <script type="text/javascript" src="html/js/private/aes.js"></script>
-    <script type="text/javascript" src="html/js/private/pad-zeropadding.js"></script>
+
+
 </head>
+
 
 <body>
 
@@ -65,9 +68,9 @@
                                         value="${maps.overTime}"/><i></i></li>
         <li><label>预计应收房费</label><input id="money" type="text" class="dfinput" disabled="disabled"
                                         value="${maps.money}"/><i></i></li>
-        <li><label>应付房费</label><input type="text" class="dfinput" value=""/><i>人民币</i>注意，不能小于预计房费</li>
+        <li><label>应付房费</label><input id="paidMoney" type="text" class="dfinput" value="" onblur="judegNum()"/><i>人民币</i><i id="judegMoney"></i></li>
         <li><label>是否退房</label><input type="text" class="dfinput" value=""/><i></i></li>
-        <li><label>&nbsp;</label><input type="button" class="btn" value="确认退房" onclick="ExitRoom()"/></li>
+        <li><label>&nbsp;</label><input id="exitButton" type="button" class="btn" value="确认退房" onclick="ExitRoom()"/></li>
         <li><label>&nbsp;</label><input type="button" class="btn" value="返回主页"/></li>
 
     </ul>
@@ -77,7 +80,6 @@
 
 
 </body>
-
 <script>
     function getNowFormatDate() {
         var date = new Date();
@@ -168,10 +170,10 @@
                         $("#phoneTest").html(data.res);
                     }
                     else{
-                    var VipCount = "你当前的等级是" +data.vipLeve +"折扣额度为" + data.memberCount+"";
-                    $("#phoneTest").html(VipCount);
-                    var moneya=decr(data.money);
-                    $("#money").val(moneya);
+                        var VipCount = "你当前的等级是" +data.vipLeve +"折扣额度为" + data.memberCount+"";
+                        $("#phoneTest").html(VipCount);
+                        var moneya=decr(data.money);
+                        $("#money").val(moneya);
                     }
                 }
             })
@@ -199,6 +201,17 @@
         var iv = CryptoJS.enc.Latin1.parse('iamironmaclass33');
         var decrypted = CryptoJS.AES.decrypt(data, key, {iv: iv, padding: CryptoJS.pad.ZeroPadding});
         return decrypted.toString(CryptoJS.enc.Utf8);
+    }
+
+    function judegNum() {
+        $("#paidMoney").val();
+        var reg=/^[0-9]*$/;
+        if(!reg.test($("#paidMoney").val())) {
+            $("#judegMoney").html("请输入正确的数字");
+            $("#exitButton").hide();
+        }else {
+            $("#exitButton").show();
+        }
     }
 
 </script>

@@ -17,9 +17,7 @@ public class MenubersTest {
 		ApplicationContext context=new ClassPathXmlApplicationContext("config/applicationContext.xml");
 		ILevelDiscountDao ldao=context.getBean("ILevelDiscountDao", ILevelDiscountDao.class);
 		IMenmbersDao dao=context.getBean("IMenmbersDao", IMenmbersDao.class);
-		service.setDao(dao);
-		service.setLdao(ldao);
-		
+
 		System.out.println(service.autoUpgrade(5000,"13011111112"));
 	}
 }

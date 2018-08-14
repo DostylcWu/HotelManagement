@@ -8,21 +8,16 @@ import com.hotelsystem.bean.MenmbersBean;
 import com.hotelsystem.dao.ILevelDiscountDao;
 import com.hotelsystem.dao.IMenmbersDao;
 import com.hotelsystem.service.manager.IMenmbersService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class IMenmbersServiceImpl implements IMenmbersService {
+	@Autowired
 	private IMenmbersDao dao;
+	@Autowired
 	private ILevelDiscountDao ldao;
-	public void setLdao(ILevelDiscountDao ldao) {
-		this.ldao = ldao;
-	}
 
-	public IMenmbersDao getDao() {
-		return dao;
-	}
-
-	public void setDao(IMenmbersDao dao) {
-		this.dao = dao;
-	}
 
 	@Override
 	public String addMenmbers(String id,String name) {
@@ -84,8 +79,14 @@ public class IMenmbersServiceImpl implements IMenmbersService {
 
 	@Override
 	public MenmbersBean checkIdByMenmbers(String id) {
-		
-		return dao.checkIdByMenmbers(id);
+		System.out.println(id);
+		MenmbersBean menmbersBean=dao.checkIdByMenmbers(id);
+		if(menmbersBean!=null){
+			return menmbersBean;
+		}
+		return null;
 	}
 
 }
+
+
