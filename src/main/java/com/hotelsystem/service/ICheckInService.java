@@ -2,6 +2,8 @@ package com.hotelsystem.service;
 
 import com.github.pagehelper.PageInfo;
 import com.hotelsystem.bean.CheckInBean;
+import com.hotelsystem.bean.HotelDiscountBean;
+import com.hotelsystem.bean.MenmbersBean;
 
 import java.util.List;
 import java.util.Map;
@@ -24,4 +26,12 @@ public interface ICheckInService {
      * 查询id入住信息
      */
     CheckInBean queryById(String id);
+
+    double judgeMoeny(int overTime, double money, CheckInBean checkInBean, HotelDiscountBean hotelDiscountBean);
+
+    String judgePaidMoney(MenmbersBean menmbersBean, String money,double lev);
+
+    String judgeRes(MenmbersBean menmbersBean);
+
+    double findLev(MenmbersBean menmbersBean);
 }

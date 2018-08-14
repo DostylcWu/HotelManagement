@@ -22,8 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 
 /**
@@ -70,13 +69,10 @@ public class CheckInAction {
         ModelAndView modelAndView = new ModelAndView();
         CheckInBean checkInBean = checkInService.queryById(cid);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        //System.out.println(checkInBean.getArriveTime());
-        //超出的房费
-        String a=df.format(checkInBean.getLeaveTime());
-        Date expectDate=null;
+        String a = df.format(checkInBean.getLeaveTime());
+        Date expectDate = null;
         try {
             expectDate = df.parse(a);
-
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -85,19 +81,9 @@ public class CheckInAction {
         double money = oservice.countOverTimeFee(checkInBean.getLeaveTime(), new Date(), checkInBean.getRoom().getRoomType().getName(), 1);
         System.out.println(checkInBean.getLeaveTime());
         int overTime = oservice.countOverTime(expectDate, new Date());
-        System.out.println("ossssss"+overTime);
         overTime = overTime / 2 + 1;
-
         HotelDiscountBean hotelDiscountBean = hotelDiscountService.findDiscountByDate();
-        if (overTime > 1) {
-            money = money  - checkInBean.getPaidMoney()+checkInBean.getRoom().getRoomType().getPrice();
-            if (hotelDiscountBean != null) {
-                money = money * hotelDiscountBean.getValue();
-            }
-        } else {
-            money = checkInBean.getRoom().getRoomType().getPrice();
-        }
-        money=money- checkInBean.getPledgeMoney();
+        money = checkInService.judgeMoeny(overTime, money, checkInBean, hotelDiscountBean);
         Map<String, Object> map = new HashMap<>();
         map.put("checkInBean", checkInBean);
         map.put("overTime", overTime);
@@ -117,34 +103,18 @@ public class CheckInAction {
         String money = "";
         String res = "";
         double memberCount = 1;
-        int vipLeve = 0;
+        double vipLeve = 0;
         try {
-            money = (AesEncodeTUtil.decryptAES(moneys));
-            //System.out.println(money);
+            money = (AesEncodeTUtil.decryptAES(moneys)).trim();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         MenmbersBean menmbersBean = iMenmbersService.checkIdByMenmbers(phone);
-        if (menmbersBean != null) {
-            System.out.println(isNumeric(money));
-            if (isNumeric(money)) {
-                memberCount = menmbersBean.getLb().getClassDiscount();
-                money = String.valueOf((Double.parseDouble(money)) * memberCount);
-                vipLeve = menmbersBean.getLb().getClassId();
-                // res= iMenmbersService.autoUpgrade(money, phone);
-            }
-
-        } else {
-            res = "输入的手机号没有会员优惠";
-        }
-
-        try {
-            money = AesEncodeTUtil.encryptAES(String.valueOf(money));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        vipLeve = checkInService.findLev(menmbersBean);
+        System.out.println("vipLeve" + vipLeve);
+        money = checkInService.judgePaidMoney(menmbersBean, money, vipLeve);
+        res = checkInService.judgeRes(menmbersBean);
         Map<String, Object> maps = new HashMap<>();
         maps.put("money", money);
         maps.put("res", res);
@@ -153,12 +123,5 @@ public class CheckInAction {
         return maps;
     }
 
-    public boolean isNumeric(String str) {
-        Pattern pattern = Pattern.compile("^(\\-?)\\d+(\\.\\d+)?$");
-        Matcher isNum = pattern.matcher(str);
-        if (!isNum.matches()) {
-            return false;
-        }
-        return true;
-    }
+
 }

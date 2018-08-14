@@ -1,56 +1,4 @@
-function getNowFormatDate() {
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + " " + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();
-    document.getElementById("timeNow").value = currentdate;
-    return currentdate;
 
-
-}
-
-getNowFormatDate();
-
-function nowday() {
-    var arrDay = $("#arrDay").val();
-    var nowDay = getNowFormatDate();
-}
-
-nowday();
-
-function GMTToStr(time) {
-    var dateStr = time.trim().split(" ");
-    var strGMT = dateStr[0] + " " + dateStr[1] + " " + dateStr[2] + " " + dateStr[5] + " " + dateStr[3] + " GMT+0800";
-    var date = new Date(Date.parse(strGMT));
-    var year = date.getFullYear();  //获取年
-    var month = date.getMonth() + 1;    //获取月
-    var day = date.getDate(); //获取日
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var sec = date.getSeconds();
-    var postDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + sec;
-    return postDate;
-}
-
-function date(arrtime, leavetime) {
-    var arrTime = GMTToStr(arrtime);
-    var leaveTime = GMTToStr(leavetime);
-    console.log(arrTime);
-    $("#arrDay").val(arrTime);
-    $("#leaveDay").val(leaveTime);
-}
-
-date("${maps.checkInBean.arriveTime}", "${maps.checkInBean.leaveTime}");
 function ExitRoom() {
 
     $.ajax({
@@ -98,27 +46,7 @@ function VipCount() {
 }
 
 
-function encr(data) {
 
-    var key = CryptoJS.enc.Latin1.parse('class33iamironma');
-    var iv = CryptoJS.enc.Latin1.parse('iamironmaclass33');
-
-    //加密
-    var encrypted = CryptoJS.AES.encrypt(data, key, {
-        iv: iv,
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.ZeroPadding
-    });
-    //解密
-
-    return encrypted.toString();
-}
-function decr(data) {
-    var key = CryptoJS.enc.Latin1.parse('class33iamironma');
-    var iv = CryptoJS.enc.Latin1.parse('iamironmaclass33');
-    var decrypted = CryptoJS.AES.decrypt(data, key, {iv: iv, padding: CryptoJS.pad.ZeroPadding});
-    return decrypted.toString(CryptoJS.enc.Utf8);
-}
 
 function judegNum() {
     $("#paidMoney").val();

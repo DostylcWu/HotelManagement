@@ -12,13 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @Controller
 public class ConsumeAction {
-    @RequestMapping("/ConsumeDetail.action")
-    public void ConsumeDetail(){
 
-    }
-    @RequestMapping("/ConsumeList.action")
-    public void ConsumeList(){
-
-    }
 
 }
