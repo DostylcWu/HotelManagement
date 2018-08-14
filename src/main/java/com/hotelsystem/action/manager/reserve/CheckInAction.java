@@ -129,6 +129,7 @@ public class CheckInAction {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         Map<String, Object> maps = new HashMap<>();
         maps.put("money", money);
         maps.put("res", res);
