@@ -92,7 +92,7 @@
         var paidMoney=$("#paidMoney").val();
         console.log(paidMoney);
         var paidMoneys=encr(paidMoney);
-        var jsonObj = {"seId":cid,"sePaidMoney":paidMoneys,"seArrDay":arrDay,"sePhone":phoneNum,
+        var jsonObj = {"seConId":cid,"sePaidMoney":paidMoneys,"seArrDay":arrDay,"sePhone":phoneNum,
             "seTimeNow":timeNow,"seDayNow":daynow,"seCRoom":croom};
         $.ajax({
             url:"CheckCounsume.action",

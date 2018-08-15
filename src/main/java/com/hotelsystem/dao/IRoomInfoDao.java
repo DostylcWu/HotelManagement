@@ -26,7 +26,7 @@ public interface IRoomInfoDao {
      * @param aimStateId
      * @return 返回受影响行数
      */
-	public int updateRoomStateById(@Param("roomId")int roomId,@Param("aimStateId")int aimStateId);
+	public int updateRoomStateById(@Param("roomId") int roomId, @Param("aimStateId") int aimStateId);
 	/**
      * 按房间号查询房间状态
      * @MethodName findRoomInfoById
@@ -63,7 +63,7 @@ public interface IRoomInfoDao {
      * @MethodName findSpecialRoomInfoCountByType
 	 * @Description TODO
 	 * @author Zhang JiaLin
-	 * @Date 2018/8/7
+	 * @Date 2018/8/7 
 	 * @version 1.0
      * @return 返回此类型房间所有数量，不管有没有被预定或者入住数量
      */
@@ -89,8 +89,8 @@ public interface IRoomInfoDao {
 	 * @param bean 新房间
      * @return 返回受影响行数
      */
-	//public int insertRoom(RoomInfoBean bean);
-
+	public int insertRoom(RoomInfoBean bean);
+	
 	/**
 	 * 通过类型查询空闲房间
 	 * @return

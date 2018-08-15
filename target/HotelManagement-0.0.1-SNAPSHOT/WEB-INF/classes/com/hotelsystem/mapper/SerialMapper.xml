@@ -4,7 +4,6 @@
     <resultMap id="BaseResultMap" type="com.hotelsystem.bean.SerialBean">
         <result column="se_id" property="seId" jdbcType="VARCHAR"/>
         <result column="se_paid_money" property="sePaidMoney" jdbcType="VARCHAR"/>
-        <result column="flag" property="flag" jdbcType="INTEGER"/>
         <result column="se_arr_day" property="seArrDay" jdbcType="TIMESTAMP"/>
         <result column="se_phone" property="sePhone" jdbcType="VARCHAR"/>
         <result column="se_time_now" property="seTimeNow" jdbcType="TIMESTAMP"/>
@@ -27,11 +26,10 @@ se_c_room
 </sql>
 
     <!--auto generated Code-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="serialBean.seId">
-        INSERT INTO serial_bean (
+    <insert id="insert" >
+        INSERT INTO serial (
             se_id,
             se_paid_money,
-            flag,
             se_arr_day,
             se_phone,
             se_time_now,
@@ -41,7 +39,6 @@ se_c_room
         ) VALUES (
             #{serialBean.seId,jdbcType=VARCHAR},
             #{serialBean.sePaidMoney,jdbcType=VARCHAR},
-            #{serialBean.flag,jdbcType=INTEGER},
             #{serialBean.seArrDay,jdbcType=TIMESTAMP},
             #{serialBean.sePhone,jdbcType=VARCHAR},
             #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
@@ -52,12 +49,11 @@ se_c_room
 </insert>
 
     <!--auto generated Code-->
-    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="serialBean.seId">
-        INSERT INTO serial_bean
+    <insert id="insertSelective" >
+        INSERT INTO serial
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="serialBean.seId!=null"> se_id,</if>
             <if test="serialBean.sePaidMoney!=null"> se_paid_money,</if>
-            <if test="serialBean.flag!=null"> flag,</if>
             <if test="serialBean.seArrDay!=null"> se_arr_day,</if>
             <if test="serialBean.sePhone!=null"> se_phone,</if>
             <if test="serialBean.seTimeNow!=null"> se_time_now,</if>
@@ -69,7 +65,7 @@ se_c_room
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="serialBean.seId!=null"> #{serialBean.seId,jdbcType=VARCHAR},</if>
             <if test="serialBean.sePaidMoney!=null"> #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>
-            <if test="serialBean.flag!=null"> #{serialBean.flag,jdbcType=INTEGER},</if>
+
             <if test="serialBean.seArrDay!=null"> #{serialBean.seArrDay,jdbcType=TIMESTAMP},</if>
             <if test="serialBean.sePhone!=null"> #{serialBean.sePhone,jdbcType=VARCHAR},</if>
             <if test="serialBean.seTimeNow!=null"> #{serialBean.seTimeNow,jdbcType=TIMESTAMP},</if>
@@ -80,14 +76,13 @@ se_c_room
 </insert>
 
     <!--auto generated Code-->
-    <insert id="insertList">        INSERT INTO serial_bean(
+    <insert id="insertList">        INSERT INTO serial(
         <include refid="Base_Column_List"/>
         )VALUES
         <foreach collection="serialBeans" item="serialBean" index="index" separator=",">
             (
             #{serialBean.seId,jdbcType=VARCHAR},
             #{serialBean.sePaidMoney,jdbcType=VARCHAR},
-            #{serialBean.flag,jdbcType=INTEGER},
             #{serialBean.seArrDay,jdbcType=TIMESTAMP},
             #{serialBean.sePhone,jdbcType=VARCHAR},
             #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
@@ -99,7 +94,7 @@ se_c_room
 </insert>
     <!--auto generated Code-->
     <update id="update">
-        UPDATE serial_bean
+        UPDATE serial
         <set>
                 <if test="serialBean.seId != null"> se_id = #{serialBean.seId,jdbcType=VARCHAR},</if>
                 <if test="serialBean.sePaidMoney != null"> se_paid_money = #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>

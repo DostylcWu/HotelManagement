@@ -15,7 +15,6 @@ import java.util.Date;
 public class SerialBean {
     private String seId;
     private String sePaidMoney;
-    private Integer flag;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date seArrDay;
     private String sePhone;
@@ -41,20 +40,7 @@ public class SerialBean {
         this.seId = seId;
     }
 
-    @Override
-    public String toString() {
-        return "SerialBean{" +
-                "seId='" + seId + '\'' +
-                ", sePaidMoney=" + sePaidMoney +
-                ", flag=" + flag +
-                ", seArrDay=" + seArrDay +
-                ", sePhone='" + sePhone + '\'' +
-                ", seTimeNow=" + seTimeNow +
-                ", seDayNow='" + seDayNow + '\'' +
-                ", seConId='" + seConId + '\'' +
-                ", seCRoom=" + seCRoom +
-                '}';
-    }
+
 
     public String getSePaidMoney() {
         return sePaidMoney;
@@ -64,13 +50,7 @@ public class SerialBean {
         this.sePaidMoney = sePaidMoney;
     }
 
-    public Integer getFlag() {
-        return flag;
-    }
 
-    public void setFlag(Integer flag) {
-        this.flag = flag;
-    }
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     public Date getSeArrDay() {
         return seArrDay;

@@ -1,5 +1,7 @@
 package com.hotelsystem.service.manager.reserve.impl;
 
+import org.n3r.idworker.Sid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,9 +14,13 @@ public class SerialServiceImpl implements SerialService{
 
     @Resource
     private SerialDao serialDao;
+    @Autowired
+    private Sid sid;
 
     @Override
     public int insert(SerialBean serialBean){
+        String seId=sid.next();
+        serialBean.setSeId(seId);
         return serialDao.insert(serialBean);
     }
 
