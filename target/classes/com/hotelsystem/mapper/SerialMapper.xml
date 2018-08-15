@@ -1,116 +1,117 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hotelsystem.dao.SerialDao">
     <!--auto generated Code-->
     <resultMap id="BaseResultMap" type="com.hotelsystem.bean.SerialBean">
-        <result column="s_id" property="sId" jdbcType="VARCHAR"/>
-        <result column="s_amount" property="sAmount" jdbcType="INTEGER"/>
-        <result column="s_time" property="sTime" jdbcType="TIMESTAMP"/>
-        <result column="flag" property="sFlag" jdbcType="INTEGER"/>
+        <result column="se_id" property="seId" jdbcType="VARCHAR"/>
+        <result column="se_paid_money" property="sePaidMoney" jdbcType="VARCHAR"/>
+        <result column="flag" property="flag" jdbcType="INTEGER"/>
+        <result column="se_arr_day" property="seArrDay" jdbcType="TIMESTAMP"/>
+        <result column="se_phone" property="sePhone" jdbcType="VARCHAR"/>
+        <result column="se_time_now" property="seTimeNow" jdbcType="TIMESTAMP"/>
+        <result column="se_day_now" property="seDayNow" jdbcType="VARCHAR"/>
+        <result column="se_con_id" property="seConId" jdbcType="VARCHAR"/>
+        <result column="se_c_room" property="seCRoom" jdbcType="INTEGER"/>
     </resultMap>
 
     <!--auto generated Code-->
     <sql id="Base_Column_List">
-        s_id,
-        s_amount,
-        s_time,
-        flag
-    </sql>
+        se_id,
+        se_paid_money,
+        flag,
+        se_arr_day,
+        se_phone,
+        se_time_now,
+        se_day_now,
+        se_con_id,
+se_c_room
+</sql>
 
     <!--auto generated Code-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="serialBean.sId">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="serialBean.seId">
         INSERT INTO serial_bean (
-            s_id,
-            s_amount,
-            s_time,
-            flag
+            se_id,
+            se_paid_money,
+            flag,
+            se_arr_day,
+            se_phone,
+            se_time_now,
+            se_day_now,
+            se_con_id,
+            se_c_room
         ) VALUES (
-            #{serialBean.sId,jdbcType=VARCHAR},
-            #{serialBean.sAmount,jdbcType=INTEGER},
-            #{serialBean.sTime,jdbcType=TIMESTAMP},
-            #{serialBean.sFlag,jdbcType=INTEGER}
+            #{serialBean.seId,jdbcType=VARCHAR},
+            #{serialBean.sePaidMoney,jdbcType=VARCHAR},
+            #{serialBean.flag,jdbcType=INTEGER},
+            #{serialBean.seArrDay,jdbcType=TIMESTAMP},
+            #{serialBean.sePhone,jdbcType=VARCHAR},
+            #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
+            #{serialBean.seDayNow,jdbcType=VARCHAR},
+            #{serialBean.seConId,jdbcType=VARCHAR},
+            #{serialBean.seCRoom,jdbcType=INTEGER}
         )
-    </insert>
+</insert>
 
     <!--auto generated Code-->
-    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="serialBean.sId">
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="serialBean.seId">
         INSERT INTO serial_bean
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="serialBean.sId!=null"> s_id,</if>
-            <if test="serialBean.sAmount!=null"> s_amount,</if>
-            <if test="serialBean.sTime!=null"> s_time,</if>
-            <if test="serialBean.sFlag!=null"> flag,</if>
+            <if test="serialBean.seId!=null"> se_id,</if>
+            <if test="serialBean.sePaidMoney!=null"> se_paid_money,</if>
+            <if test="serialBean.flag!=null"> flag,</if>
+            <if test="serialBean.seArrDay!=null"> se_arr_day,</if>
+            <if test="serialBean.sePhone!=null"> se_phone,</if>
+            <if test="serialBean.seTimeNow!=null"> se_time_now,</if>
+            <if test="serialBean.seDayNow!=null"> se_day_now,</if>
+            <if test="serialBean.seConId!=null"> se_con_id,</if>
+            <if test="serialBean.seCRoom!=null"> se_c_room</if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="serialBean.sId!=null">#{serialBean.sId,jdbcType=VARCHAR},
-            </if>
-            <if test="serialBean.sAmount!=null">#{serialBean.sAmount,jdbcType=INTEGER},
-            </if>
-            <if test="serialBean.sTime!=null">#{serialBean.sTime,jdbcType=TIMESTAMP},
-            </if>
-            <if test="serialBean.sFlag!=null">#{serialBean.sFlag,jdbcType=INTEGER},
-            </if>
+            <if test="serialBean.seId!=null"> #{serialBean.seId,jdbcType=VARCHAR},</if>
+            <if test="serialBean.sePaidMoney!=null"> #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>
+            <if test="serialBean.flag!=null"> #{serialBean.flag,jdbcType=INTEGER},</if>
+            <if test="serialBean.seArrDay!=null"> #{serialBean.seArrDay,jdbcType=TIMESTAMP},</if>
+            <if test="serialBean.sePhone!=null"> #{serialBean.sePhone,jdbcType=VARCHAR},</if>
+            <if test="serialBean.seTimeNow!=null"> #{serialBean.seTimeNow,jdbcType=TIMESTAMP},</if>
+            <if test="serialBean.seDayNow!=null"> #{serialBean.seDayNow,jdbcType=VARCHAR},</if>
+            <if test="serialBean.seConId!=null"> #{serialBean.seConId,jdbcType=VARCHAR},</if>
+            <if test="serialBean.seCRoom!=null"> #{serialBean.seCRoom,jdbcType=INTEGER}</if>
         </trim>
-    </insert>
+</insert>
 
     <!--auto generated Code-->
-    <insert id="insertList">
-        INSERT INTO serial_bean (
+    <insert id="insertList">        INSERT INTO serial_bean(
         <include refid="Base_Column_List"/>
         )VALUES
         <foreach collection="serialBeans" item="serialBean" index="index" separator=",">
             (
-            #{serialBean.sId,jdbcType=VARCHAR},
-            #{serialBean.sAmount,jdbcType=INTEGER},
-            #{serialBean.sTime,jdbcType=TIMESTAMP},
-            #{serialBean.sFlag,jdbcType=INTEGER}
+            #{serialBean.seId,jdbcType=VARCHAR},
+            #{serialBean.sePaidMoney,jdbcType=VARCHAR},
+            #{serialBean.flag,jdbcType=INTEGER},
+            #{serialBean.seArrDay,jdbcType=TIMESTAMP},
+            #{serialBean.sePhone,jdbcType=VARCHAR},
+            #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
+            #{serialBean.seDayNow,jdbcType=VARCHAR},
+            #{serialBean.seConId,jdbcType=VARCHAR},
+            #{serialBean.seCRoom,jdbcType=INTEGER}
             )
         </foreach>
-    </insert>
-
+</insert>
     <!--auto generated Code-->
     <update id="update">
         UPDATE serial_bean
         <set>
-            <if test="serialBean.sAmount != null"> s_amount= #{serialBean.sAmount,jdbcType=INTEGER},</if>
-            <if test="serialBean.sTime != null"> s_time= #{serialBean.sTime,jdbcType=TIMESTAMP},</if>
-            <if test="serialBean.sFlag != null"> flag= #{serialBean.sFlag,jdbcType=INTEGER}</if>
+                <if test="serialBean.seId != null"> se_id = #{serialBean.seId,jdbcType=VARCHAR},</if>
+                <if test="serialBean.sePaidMoney != null"> se_paid_money = #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>
+                <if test="serialBean.flag != null"> flag = #{serialBean.flag,jdbcType=INTEGER},</if>
+                <if test="serialBean.seArrDay != null"> se_arr_day = #{serialBean.seArrDay,jdbcType=TIMESTAMP},</if>
+                <if test="serialBean.sePhone != null"> se_phone = #{serialBean.sePhone,jdbcType=VARCHAR},</if>
+                <if test="serialBean.seTimeNow != null"> se_time_now = #{serialBean.seTimeNow,jdbcType=TIMESTAMP},</if>
+                <if test="serialBean.seDayNow != null"> se_day_now = #{serialBean.seDayNow,jdbcType=VARCHAR},</if>
+                <if test="serialBean.seConId != null"> se_con_id = #{serialBean.seConId,jdbcType=VARCHAR},</if>
+                <if test="serialBean.seCRoom != null"> se_c_room = #{serialBean.seCRoom,jdbcType=INTEGER}</if>
         </set>
-        WHERE s_id = #{serialBean.sId,jdbcType=VARCHAR}
+		WHERE se_id = #{serialBean.seId,jdbcType=VARCHAR}
     </update>
-
-<!--auto generated by codehelper on 2018-08-08 10:59:46-->
-	<select id="find" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from serial
-    </select>
-
-<!--auto generated by codehelper on 2018-08-08 11:00:04-->
-	<select id="findBySAmount" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from serial
-        where s_amount=#{sAmount,jdbcType=INTEGER}
-    </select>
-
-<!--auto generated by codehelper on 2018-08-08 11:02:53-->
-	<delete id="deleteBySTimeGreaterThanOrEqualTo">
-	delete from  serial
-	where s_time<![CDATA[>=]]> #{minSTime,jdbcType=TIMESTAMP}</delete>
-
-<!--auto generated by codehelper on 2018-08-08 11:12:22-->
-	<select id="findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from serial
-        where s_time<![CDATA[>=]]> #{minSTime,jdbcType=TIMESTAMP} and s_time<![CDATA[<=]]>
-        #{maxSTime,jdbcType=TIMESTAMP}
-    </select>
-
-
-
-
 </mapper>
 

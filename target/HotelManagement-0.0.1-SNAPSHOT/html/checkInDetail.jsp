@@ -40,9 +40,9 @@
     <div class="formtitle"><span>基本信息</span></div>
 
     <ul class="forminfo">
-        <li><label>订单号</label><input type="text" class="dfinput" disabled="disabled" value="${maps.checkInBean.id}"/><i>注意，除了房费不可编辑其他</i>
+        <li><label>订单号</label><input type="text" id="cid" class="dfinput" disabled="disabled" value="${maps.checkInBean.id}"/><i>注意，除了房费不可编辑其他</i>
         </li>
-        <li><label>房间号</label><input type="text" class="dfinput" disabled="disabled"
+        <li><label>房间号</label><input id="croom" type="text" class="dfinput" disabled="disabled"
                                      value="${maps.checkInBean.room.id}"/><i></i></li>
         <li><label>入住时间</label><input id="arrDay" type="text" class="dfinput" disabled="disabled" value=""/><i></i></li>
         <li><label>预计离开时间</label><input id="leaveDay" type="text" class="dfinput" disabled="disabled" value=""/><i></i>
@@ -82,6 +82,31 @@
 </body>
 <script type="text/javascript" src="html/js/private/CheckDetail.js"></script>
 <script>
+    function ExitRoom() {
+        var cid=$("#cid").val();
+        var croom=$("#croom").val();
+        var arrDay=$("#arrDay").val();
+        var phoneNum=$("#phoneNum").val();
+        var timeNow=$("#timeNow").val();
+        var daynow=$("#daynow").val();
+        var paidMoney=$("#paidMoney").val();
+        console.log(paidMoney);
+        var paidMoneys=encr(paidMoney);
+        var jsonObj = {"seId":cid,"sePaidMoney":paidMoneys,"seArrDay":arrDay,"sePhone":phoneNum,
+            "seTimeNow":timeNow,"seDayNow":daynow,"seCRoom":croom};
+        $.ajax({
+            url:"CheckCounsume.action",
+            type:"post",
+            anync:true,
+            dataType:"json",
+            contentType:"application/json;charset=utf-8",
+            data:JSON.stringify(jsonObj),
+            success:function () {
+
+            }
+        })
+
+    }
     function getNowFormatDate() {
         var date = new Date();
         var seperator1 = "-";
@@ -156,6 +181,7 @@
         var decrypted = CryptoJS.AES.decrypt(data, key, {iv: iv, padding: CryptoJS.pad.ZeroPadding});
         return decrypted.toString(CryptoJS.enc.Utf8);
     }
+
 
 </script>
 </html>

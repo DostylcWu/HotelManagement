@@ -1,14 +1,4 @@
 
-function ExitRoom() {
-
-    $.ajax({
-        url: "/CheckInList.action",
-        method: "post",
-        async: true,
-        dataType: "json",
-
-    })
-}
 
 
 function VipCount() {

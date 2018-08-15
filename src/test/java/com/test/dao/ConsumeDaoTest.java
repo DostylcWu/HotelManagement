@@ -49,15 +49,7 @@ public class ConsumeDaoTest {
             session.close();
         }
     }
-    @Test
-    public void test3() throws ParseException {
-        SqlSession session=MybatisUtil.getSqlSession();
-        SerialDao serialDao=session.getMapper(SerialDao.class);
-        String a="2018-1-1 00:00:00";
-        String b="2018-2-2 00:00:00";
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        serialDao.findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo(sdf.parse(a),sdf.parse(b));
-    }
+
     @Test
     public void test4(){
         SqlSession session=MybatisUtil.getSqlSession();

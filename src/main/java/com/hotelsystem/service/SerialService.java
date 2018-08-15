@@ -1,8 +1,9 @@
+
 package com.hotelsystem.service;
 
 import java.util.List;
 import com.hotelsystem.bean.SerialBean;
-public interface SerialService {
+public interface SerialService{
 
     int insert(SerialBean serialBean);
 

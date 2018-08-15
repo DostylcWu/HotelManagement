@@ -1,5 +1,8 @@
 package com.hotelsystem.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -10,40 +13,102 @@ import java.util.Date;
  * @Version 1.0
  **/
 public class SerialBean {
-    private String sId;
-    private Integer sAmount;
-    private Date sTime;
-    private Integer sFlag;
+    private String seId;
+    private String sePaidMoney;
+    private Integer flag;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date seArrDay;
+    private String sePhone;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date seTimeNow;
+    private String seDayNow;
+    private String seConId;
+    private Integer seCRoom;
 
-    public String getsId() {
-        return sId;
+    public Integer getSeCRoom() {
+        return seCRoom;
     }
 
-    public void setsId(String sId) {
-        this.sId = sId;
+    public void setSeCRoom(Integer seCRoom) {
+        this.seCRoom = seCRoom;
     }
 
-    public Integer getsAmount() {
-        return sAmount;
+    public String getSeId() {
+        return seId;
     }
 
-    public void setsAmount(Integer sAmount) {
-        this.sAmount = sAmount;
+    public void setSeId(String seId) {
+        this.seId = seId;
     }
 
-    public Date getsTime() {
-        return sTime;
+    @Override
+    public String toString() {
+        return "SerialBean{" +
+                "seId='" + seId + '\'' +
+                ", sePaidMoney=" + sePaidMoney +
+                ", flag=" + flag +
+                ", seArrDay=" + seArrDay +
+                ", sePhone='" + sePhone + '\'' +
+                ", seTimeNow=" + seTimeNow +
+                ", seDayNow='" + seDayNow + '\'' +
+                ", seConId='" + seConId + '\'' +
+                ", seCRoom=" + seCRoom +
+                '}';
     }
 
-    public void setsTime(Date sTime) {
-        this.sTime = sTime;
+    public String getSePaidMoney() {
+        return sePaidMoney;
     }
 
-    public Integer getsFlag() {
-        return sFlag;
+    public void setSePaidMoney(String sePaidMoney) {
+        this.sePaidMoney = sePaidMoney;
     }
 
-    public void setsFlag(Integer sFlag) {
-        this.sFlag = sFlag;
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
+    }
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public Date getSeArrDay() {
+        return seArrDay;
+    }
+
+    public void setSeArrDay(Date seArrDay) {
+        this.seArrDay = seArrDay;
+    }
+
+    public String getSePhone() {
+        return sePhone;
+    }
+
+    public void setSePhone(String sePhone) {
+        this.sePhone = sePhone;
+    }
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    public Date getSeTimeNow() {
+        return seTimeNow;
+    }
+
+    public void setSeTimeNow(Date seTimeNow) {
+        this.seTimeNow = seTimeNow;
+    }
+
+    public String getSeDayNow() {
+        return seDayNow;
+    }
+
+    public void setSeDayNow(String seDayNow) {
+        this.seDayNow = seDayNow;
+    }
+
+    public String getSeConId() {
+        return seConId;
+    }
+
+    public void setSeConId(String seConId) {
+        this.seConId = seConId;
     }
 }

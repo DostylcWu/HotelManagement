@@ -11,6 +11,7 @@ import com.hotelsystem.utils.AesEncodeTUtil;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.regex.Pattern;
  * @Version 1.0
  **/
 @Service
+@Transactional
 public class CheckInServiceImpl implements ICheckInService {
     @Autowired
     private ICheckInDao checkInDao;
@@ -58,6 +60,7 @@ public class CheckInServiceImpl implements ICheckInService {
     }
 
     @Override
+
     public double judgeMoeny(int overTime, double money, CheckInBean checkInBean, HotelDiscountBean hotelDiscountBean) {
 
         if (overTime > 1) {

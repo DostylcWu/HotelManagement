@@ -1,4 +1,4 @@
-package com.hotelsystem.service.impl;
+package com.hotelsystem.service.manager.reserve.impl;
 
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -8,7 +8,7 @@ import com.hotelsystem.dao.SerialDao;
 import com.hotelsystem.service.SerialService;
 
 @Service
-public class SerialServiceImpl implements SerialService {
+public class SerialServiceImpl implements SerialService{
 
     @Resource
     private SerialDao serialDao;
