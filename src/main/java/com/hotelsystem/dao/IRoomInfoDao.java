@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public interface IRoomInfoDao {
      * @param aimStateId
      * @return 返回受影响行数
      */
-	public int updateRoomStateById(@Param("roomId") int roomId, @Param("aimStateId") int aimStateId);
+	public int updateRoomStateById(@Param("roomId")int roomId,@Param("aimStateId")int aimStateId);
 	/**
      * 按房间号查询房间状态
      * @MethodName findRoomInfoById
@@ -96,4 +97,13 @@ public interface IRoomInfoDao {
 	 * @return
 	 */
 	List<RoomInfoBean> findEmptyRoomByType(int typeId);
+	/**
+	 * 查询相应类型的房间信息
+	 */
+	List<RoomInfoBean> findRoomByType(int type);
+	/**
+	 * 展示房间信息
+	 */
+	List<RoomInfoBean> roomDisplayAll();
+	
 }

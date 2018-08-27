@@ -1,6 +1,10 @@
+
 package com.hotelsystem.bean;
 
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * @ClassNmae ManagerRecordBean
  * @author Weizhengyi
@@ -11,8 +15,11 @@ import java.util.Date;
 public class ManagerRecordBean {
 	
 	private int mrId;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date mrOnTime;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date mrOffTime;
+	
 	private ManagerLoginBean mlb;
 	public int getMrId() {
 		return mrId;
@@ -37,7 +44,7 @@ public class ManagerRecordBean {
 	public void setMrOffTime(Date mrOffTime) {
 		this.mrOffTime = mrOffTime;
 	}
-	
+	@JsonIgnore
 	public ManagerLoginBean getMlb() {
 		return mlb;
 	}

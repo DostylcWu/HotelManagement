@@ -1,3 +1,4 @@
+
 package org.n3r.idworker;
 
 import java.security.SecureRandom;

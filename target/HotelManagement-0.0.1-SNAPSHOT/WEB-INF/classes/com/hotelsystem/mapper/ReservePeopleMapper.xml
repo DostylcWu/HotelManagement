@@ -23,25 +23,13 @@
   		<result property="state" column="rr_state"/>
  	</resultMap>
  	
- 	<select id="findReservePeopleByPeopleName" parameterType="String" resultMap="PeopleMapByName">
+ 	<select id="findReservePeopleByPeopleName" parameterType="String" resultMap="reservePeopleMap">
  		select * from reserve_people where rp_name like #{name} and flag=0
  	</select>
- 	<resultMap type="ReservePeopleBean" id="PeopleMapByName">
- 		<id property="id" column="rp_id"/>
-  		<result property="name" column="rp_name"/>
-  		<result property="tel" column="rp_tel"/>
-  		<result property="message" column="rp_msg"/>
-  	<collection property="reserveRoomList" ofType="ReserveRoomBean" resultMap="roomMapByName"></collection>
- 	</resultMap>
- 	<resultMap type="ReserveRoomBean" id="roomMapByName">
- 		<id property="id" column="rr_id"/>
-  		<result property="checkIn" column="rr_in"/>
-  		<result property="checkOut" column="rr_out"/>
-  		<result property="arrive" column="rr_arrive"/>
-  		<result property="cancel" column="rr_cancel"/>
-  		<result property="money" column="rr_money"/>
-  		<result property="state" column="rr_state"/>
- 	</resultMap>
+ 	
+ 	<select id="findReservePeopleByPeopleTel" parameterType="String" resultMap="reservePeopleMap">
+ 		select * from reserve_people where rp_tel = #{tel} and flag=0
+ 	</select>
  	
  	<insert id="insertReservePeople" parameterType="ReservePeopleBean" keyProperty="id" useGeneratedKeys="true">
  		insert into reserve_people(rp_name,rp_tel,rp_msg) values (#{name},#{tel},#{message})

@@ -1,3 +1,4 @@
+
 package com.hotelsystem.bean;
 
 /**
@@ -8,6 +9,10 @@ package com.hotelsystem.bean;
  * @version v1.0
  */
 public class ReserveNumberBean {
+	/**
+	 * 主键ID
+	 */
+	private int id;
 	/**
 	 * 预订房间数量
 	 */
@@ -20,6 +25,15 @@ public class ReserveNumberBean {
 	 * 预订订单编号
 	 */
 	private ReserveRoomBean reserveRoom;
+
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public int getCount() {
 		return count;
@@ -47,9 +61,12 @@ public class ReserveNumberBean {
 
 	@Override
 	public String toString() {
-		return "ReserveNumberBean [count=" + count + ", roomType=" + roomType
-				+ ", reserveRoom=" + reserveRoom + "]";
+		return "ReserveNumberBean [id=" + id + ", count=" + count
+				+ ", roomType=" + roomType + ", reserveRoom=" + reserveRoom
+				+ "]";
 	}
+
+
 
 
 

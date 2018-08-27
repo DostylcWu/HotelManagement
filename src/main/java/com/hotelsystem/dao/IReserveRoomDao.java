@@ -1,12 +1,12 @@
+
 package com.hotelsystem.dao;
 
-import java.util.Date;
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.hotelsystem.bean.ReserveRoomBean;
+import com.hotelsystem.bean.ViewReserveRoomBean;
 
 /**
  * 房间预定表
@@ -66,6 +66,14 @@ public interface IReserveRoomDao {
 	 */
 	public ReserveRoomBean findReserveRoomByRoomId(String reserveRoomId);
 	/**
+	 * 支付成功后更新预定房间信息
+	 * @Title: updateAfterPay
+	 * @Description: TODO
+	 * @param bean
+	 * @return int
+	 */
+	public int updateAfterPay(ReserveRoomBean bean);
+	/**
 	 * 
 	 * @Title: findReserveCountByTypeId 
 	 * @Description: TODO
@@ -74,8 +82,16 @@ public interface IReserveRoomDao {
 	 * @return ReserveRoomBean
 	 * @throws
 	 */
-	public int findReserveCountByTypeName(@Param("typeName")String typeName, @Param("dateStart")String dateStart, @Param("dateEnd")String dateEnd);
-	
-
+	public int findReserveCountByTypeName(ViewReserveRoomBean bean);
+	/**
+	 * 
+	 * @Title: findViewReserveRoomByRoomId 
+	 * @Description: TODO
+	 * @param @param reserveRoomId
+	 * @param @return
+	 * @return ReserveRoomBean
+	 * @throws
+	 */
+	ViewReserveRoomBean findViewReserveRoomByRoomId(String reserveRoomId);
 	
 }

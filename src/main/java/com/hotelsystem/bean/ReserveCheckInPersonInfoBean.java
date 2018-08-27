@@ -1,9 +1,9 @@
+
 package com.hotelsystem.bean;
 /**
  * 
 * <p>Title: ReserveCheckInPersonInfoBean</p>
 * <p>Description: 预定入住人信息实体类</p>
-* <p>Company: 蜗牛学院</p> 
 * @author linweichao
 * @date 上午10:29:26
  */

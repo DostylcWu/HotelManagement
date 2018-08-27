@@ -20,6 +20,11 @@ public interface ILevelDiscountDao {
 	public int delLevelDiscount(int id);
 	//查看所有会员折扣
 	public List<LevelDiscountBean> checkLevelDiscount();
-	//根据id查看所有会员折扣
+	//根据id查看会员折扣
 	public LevelDiscountBean checkIdByLevelDiscount(int id);
+	//查询表中第一条数据c_id
+	public int findFirstId();
+	//查询表中最后条数据c_id
+	public int findEndId();
+	
 }

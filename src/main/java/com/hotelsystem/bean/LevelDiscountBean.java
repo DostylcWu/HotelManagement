@@ -1,3 +1,4 @@
+
 package com.hotelsystem.bean;
 /**
  * @ClassName LevelDiscountBean

@@ -1,19 +1,23 @@
+
 package com.hotelsystem.service.manager.reserve.impl;
+
+import java.util.List;
+
+import javax.annotation.Resource;
 
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import java.util.List;
-import com.hotelsystem.bean.SerialBean;
-import com.hotelsystem.dao.SerialDao;
-import com.hotelsystem.service.SerialService;
 
-@Service
+import com.hotelsystem.bean.SerialBean;
+import com.hotelsystem.dao.ISerialDao;
+import com.hotelsystem.service.manager.reserve.SerialService;
+
+@Service(value="serial2")
 public class SerialServiceImpl implements SerialService{
 
     @Resource
-    private SerialDao serialDao;
+    private ISerialDao serialDao;
     @Autowired
     private Sid sid;
 

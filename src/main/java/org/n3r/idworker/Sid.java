@@ -1,10 +1,12 @@
+
 package org.n3r.idworker;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.n3r.idworker.strategy.DefaultWorkerIdStrategy;
 import org.n3r.idworker.utils.Utils;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Sid {
     private static WorkerIdStrategy workerIdStrategy;
@@ -34,7 +36,8 @@ public class Sid {
      * @return 固定21位数字字符串
      */
 
-    public  String next() {
+
+    public String next() {
         long id = idWorker.nextId();
         String yyMMdd = new SimpleDateFormat("yyyyMMdd").format(new Date());
         return yyMMdd + String.format("%014d", id);

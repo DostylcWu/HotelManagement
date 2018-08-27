@@ -1,80 +1,40 @@
+
 package com.hotelsystem.action.manager.reserve;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hotelsystem.bean.CheckInPersonBean;
-import com.hotelsystem.bean.ReserveNumberBean;
-import com.hotelsystem.bean.ReservePeopleBean;
-import com.hotelsystem.bean.ReserveRoomBean;
-import com.hotelsystem.bean.RoomTypeBean;
+import com.hotelsystem.service.manager.reserve.IAddReserveSerrvice;
+import com.hotelsystem.utils.SendMessageCode;
 
 @Controller
 public class AddReserveAction {
-	@RequestMapping(value="/managerAddReserve.action")
-	public void addReserveByManager(ReserveRoomBean reserveRoomBean,ReservePeopleBean reservePeopleBean,
-			ReserveNumberBean reserveNumberBean,RoomTypeBean roomTypeBean){
-				System.out.println("room:"+reserveRoomBean);
-				System.out.println("people:"+reservePeopleBean);
-				System.out.println("number:"+reserveNumberBean);
-				System.out.println("roomTypeBean:"+roomTypeBean);
-		
-	}
-	@RequestMapping(value="/managerAddCheckInPerson.action")
-	public void addCheckInPerson(@RequestBody List<CheckInPersonBean> list){
-		for (CheckInPersonBean checkInPersonBean : list) {
-			System.out.println(checkInPersonBean);
-		}
-	}
-	@RequestMapping(value="/managerAddReserveMsg.action")
-	public void addReserveMsg(@RequestBody List<Map<String, Object>> list){
-		for (Map<String, Object> map : list) {
-			for(Map.Entry<String, Object> entry: map.entrySet()){
-				System.out.println("key:"+entry.getKey()+"-----"+"value:"+entry.getValue());
-			}
-		}
-	}
+	@Autowired
+	private IAddReserveSerrvice service;
+	
 	@RequestMapping(value="/addReserveFromManager.action")
-	public void addReserveFromManager(@RequestBody List<Map<String,Object>> list){
-//		int m=0;
-		int size=(int) list.get(list.size()-1).get("i");
-		System.out.println(size);
-		ObjectMapper mapper=new ObjectMapper();
-//		mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
-		for(int i=0;i<size;i++){
-			RoomTypeBean roomTypeBean=mapper.convertValue(list.get(i).get("roomTypeBean"), RoomTypeBean.class);
-			System.out.println("roomTypeBean"+roomTypeBean);
-		}
-		for(int i=size;i<2*size;i++){
-			ReserveNumberBean reserveNumberBean=mapper.convertValue(list.get(i).get("reserveNumberBean"),ReserveNumberBean.class);
-			System.out.println("reserveNumberBean"+reserveNumberBean);
-		}
-		ReservePeopleBean reservePeopleBean=mapper.convertValue(list.get(2*size).get("reservePeopleBean"),ReservePeopleBean.class);
-		System.out.println("reservePeopleBean"+reservePeopleBean);
-		CheckInPersonBean checkInPersonBean = mapper.convertValue( list.get(2*size+1).get("checkInPersonBean"),CheckInPersonBean.class);
-		System.out.println("checkInPersonBean"+checkInPersonBean);
-		ReserveRoomBean reserveRoomBean = mapper.convertValue( list.get(2*size+2).get("reserveRoomBean"),ReserveRoomBean.class);
-		System.out.println("reserveRoomBean"+reserveRoomBean);
-
-		/*		Map<String, Object> map = list.get(0);
-		
-		System.out.println("map.size:"+map.size());
-		Object obj= map.get("roomTypeBean");
-		RoomTypeBean bean = mapper.convertValue(obj, RoomTypeBean.class);
-		System.out.println("bean:"+bean);*/
-		
-		/*		for (Map<String, Object> map : list) {
-			for(Map.Entry<String, Object> entry: map.entrySet()){
-				System.out.println("key:"+entry.getKey()+"-----"+"value:"+entry.getValue());
+	public @ResponseBody String addReserveFromManager(@RequestBody List<Map<String,Object>> list){
+		Map<String, Object> map = service.addReserveService(list);
+		String res = (String) map.get("res");
+		if(res=="添加成功!"){
+			String phone = (String) map.get("tel");
+			String name = (String) map.get("name");
+			String roomId = (String) map.get("roomId");
+			if(phone!=null && name!=null && roomId!=null){
+				try {
+					String code = SendMessageCode.sendCodeAfterSuccess(phone, name, roomId);
+					System.out.println(code);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-			System.out.println(m++);
-		}*/
-		
+		}
+		return res;
 	}
 }

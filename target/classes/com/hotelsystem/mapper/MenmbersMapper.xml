@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -15,11 +15,11 @@
 		UPDATE menmbers SET flag=1 WHERE m_id=#{id}
 	</update>
 	<select id="checkAllMenmbers" resultMap="menmberMap">
-		SELECT *FROM menmbers m JOIN level_discount ld ON m.m_c_id=ld.c_id where
-		m.flag=0;
+		SELECT * FROM menmbers m JOIN level_discount ld ON m.m_c_id=ld.c_id where
+		m.flag=0
 	</select>
 	
-	<!-- 通过名字即电话查询会员 -->
+	
 	<select id="findMenmbersByName" parameterType="string" resultMap="menmberMap">
 		SELECT * FROM menmbers as m JOIN level_discount as ld ON m.m_c_id=ld.c_id 
 		where m.m_name like concat(concat('%',#{name}),'%') and m.flag=0;
@@ -38,7 +38,7 @@
 		<result column="c_discount" property="classDiscount" />
 	</resultMap>
 	<select id="checkIdByMenmbers" resultMap="menmberMap2">
-		SELECT *FROM menmbers m JOIN level_discount ld ON m.m_c_id=ld.c_id where
+		SELECT * FROM menmbers m JOIN level_discount ld ON m.m_c_id=ld.c_id where
 		m_id=#{id} and m.flag=0;
 	</select>
 	<resultMap type="MenmbersBean" id="menmberMap2">

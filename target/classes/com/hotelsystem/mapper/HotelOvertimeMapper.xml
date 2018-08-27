@@ -12,8 +12,8 @@
   	</select>
   	<resultMap id="overTimeMap" type="HotelOverTimeBean">
   	    <id property="id" column="o_id"></id>
-  		<result property="overHalfDayStartTime" column="o_etime1"></result>
-  		<result property="overAllDayStartTime" column="o_etime2"></result>
+  		<result property="overHalfDayStartTime" column="o_etime1" jdbcType="TIMESTAMP"></result>
+  		<result property="overAllDayStartTime" column="o_etime2" jdbcType="TIMESTAMP"></result>
   	</resultMap>
   	
   	<!-- 修改退房时间规定 -->

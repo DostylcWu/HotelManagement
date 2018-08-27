@@ -13,7 +13,7 @@
   	
   	<!-- 更据房间号查询该房间信息 -->
   	<select id="findRoomInfoById"  parameterType="int" resultMap="singleRoomInfoMap">
-   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_id=#{roomId} and flag=0; 
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_id=#{roomId} and a.flag=0; 
   	</select>
   	<resultMap id="singleRoomInfoMap" type="RoomInfoBean">
   	    <id property="id" column="ri_id"></id>
@@ -62,7 +62,7 @@
   	</update>
   	
   	<!-- 添加房间 -->
-  	<insert id="addRoom" parameterType="RoomInfoBean">
+  	<insert id="insertRoom" parameterType="RoomInfoBean">
   		insert into room_info (ri_id,ri_floor,ri_s_id,ri_rt_id) values(#{id},#{floor},#{roomState.id},#{roomType.id});
   	</insert>	
   	
@@ -70,4 +70,14 @@
   	<select id="findEmptyRoomByType" parameterType="int" resultMap="singleRoomInfoMap">
    		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_s_id=1 and ri_rt_id=#{typeId} and a.flag=0; 
   	</select>
+  	
+  	<select id="findRoomByType" parameterType="int" resultMap="singleRoomInfoMap">
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where ri_rt_id=#{type} and a.flag=0
+  	</select>
+  	<select id="roomDisplayAll" parameterType="int" resultMap="singleRoomInfoMap">
+   		select * from room_info as a join room_state as b on a.ri_s_id=b.rs_id join room_type as c on a.ri_rt_id=c.rt_id where a.flag=0
+  	</select>
+  	
+  	
+  	
 </mapper>

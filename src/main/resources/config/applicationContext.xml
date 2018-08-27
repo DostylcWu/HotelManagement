@@ -1,12 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
-        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
         http://www.springframework.org/schema/tx 
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/aop 
@@ -14,8 +16,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd"
->
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <!--配置数据源
@@ -76,12 +77,33 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <tx:annotation-driven transaction-manager="transactionManager" />
+
+       <!-- 房间类型Array-->
+    <util:list id="roomType">
+    <value>单人间</value>
+    <value>双人间</value>
+    <value>大床房</value>
+    <value>总统套房</value>
+    <value>海景房</value>
+    <value>桑拿房</value>
+    </util:list>
+    
+    <!-- 房间状态Array-->
+    <util:list id="roomState">
+    <value>可入住</value>
+    <value>已入住</value>
+    <value>待打扫</value>
+    </util:list>
+
     <!-- 订单生成器-->
     <bean id="sid" class="org.n3r.idworker.Sid"></bean>
     <!-- 扫描包加载Service实现类 -->
     <context:component-scan base-package="com.hotelsystem.service"></context:component-scan>
-
+	<context:component-scan base-package="com.hotelsystem.utils"></context:component-scan>
     <!-- 开启注解方式声明事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
 
+	
+	
 </beans>

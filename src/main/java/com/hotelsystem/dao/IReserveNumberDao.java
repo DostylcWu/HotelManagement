@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.List;
@@ -40,12 +41,14 @@ public interface IReserveNumberDao {
 	 * 
 	 * @Title: deleteReserveNumber 
 	 * @Description: TODO
-	 * @param @param bean
+	 * @param @param id
 	 * @param @return
 	 * @return int
 	 * @throws
 	 */
-	public int deleteReserveNumber(ReserveNumberBean bean);
+	public int deleteReserveNumber(int reserveNumberId);
+	
+	int deleteReserveNumberByRoomId(String roomId);
 	/**
 	 * 
 	 * @Title: findReserveNumberByRoomId 
@@ -56,4 +59,25 @@ public interface IReserveNumberDao {
 	 * @throws
 	 */
 	public List<ReserveNumberBean> findReserveNumberByRoomId(String reserveRoomId);
+	
+	/**
+	 * 查询相应房间类型已预定数
+	 */
+	int hasOrderCount(int type);
+	/**
+	 * 
+	 * @Title: findById 
+	 * @Description: TODO
+	 * @param @param id
+	 * @param @return
+	 * @return ReserveNumberBean
+	 * @throws
+	 */
+	public ReserveNumberBean findById(int id);
+	/**
+	 * 通过订单号查找ReserveNumberBean
+	 * @param reserveRoomId
+	 * @return
+	 */
+	public ReserveNumberBean findReserveNumberById(String reserveRoomId);
 }

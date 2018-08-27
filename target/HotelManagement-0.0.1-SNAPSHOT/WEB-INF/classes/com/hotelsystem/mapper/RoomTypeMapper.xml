@@ -19,7 +19,7 @@
   	<result property="bedType" column="rt_bedtype"></result>
   	<result property="netType" column="rt_nettype"></result>
   	<result property="window" column="rt_window"></result>
-  	<result property="breakfast" column="rt_breakfast"></result>
+  	<result property="breakfirst" column="rt_breakfirst"></result>
   	<result property="noSmoking" column="rt_nosmoking"></result>
   </resultMap>
 
@@ -75,4 +75,9 @@
   	<select id="findRoomTypeById"  parameterType="int" resultMap="allRoomType">
    		select * from room_type where rt_id=#{roomTypeId} and flag=0; 
   	</select>
+  	
+  	<!-- 根据查询所有房间类型的详情 -->
+  	<select id="findRoomTypeDetailInfo" resultType="Integer">
+      select ifnull(num,0) from roomtypeinfo where rt_name=#{typeName} and rs_name=#{stateName} ;
+    </select>
 </mapper>

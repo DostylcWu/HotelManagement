@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import com.hotelsystem.bean.RoomStateBean;

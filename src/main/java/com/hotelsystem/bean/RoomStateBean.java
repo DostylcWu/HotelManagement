@@ -1,3 +1,4 @@
+
 package com.hotelsystem.bean;
 /**
  * 房间状态表

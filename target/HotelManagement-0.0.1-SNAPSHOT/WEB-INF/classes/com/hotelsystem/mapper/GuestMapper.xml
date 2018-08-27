@@ -5,8 +5,19 @@
 
 <!-- namespace：就是给当前xml文件命名，区分sql块，以后会出现多个sql块 -->
 <mapper namespace="com.hotelsystem.dao.IGuestDao">
-  	
-  	<resultMap id="guest" type="com.hotelsystem.bean.GuestBean">
+  	<insert id="insertGuest" parameterType="GuestBean">
+		insert into
+		guest(g_idcode,g_ri_id,g_name,g_sex,g_contact) values
+		(#{id},#{room.id},#{name},#{sex},#{tele})
+	</insert>
+	<delete id="deleteGuest" parameterType="Integer">
+		delete from guest where
+		g_ri_id=#{room.id}
+	</delete>
+	<select id="findAllGuestId" resultType="String">
+	select g_idcode from guest where flag=0	
+	</select>
+  	<resultMap id="guest" type="GuestBean">
   		<id property="id" column="g_idcode"></id>
   		<result property="name" column="g_name"></result>
   		<result property="sex" column="g_sex"></result>
@@ -23,6 +34,13 @@
   		on g.g_ri_id=r.ri_id 
   		where g.g_idcode=#{id} and g.flag=0
   	</select>
+  	<select id="findGuestByRoomId" parameterType="Integer" resultMap="guest">
+  		select * from 
+  		guest as g join room_info as r 
+  		on g.g_ri_id=r.ri_id 
+  		where g.g_ri_id=#{id} and g.flag=0
+  	</select>
+  	
   	
   	
   	<select id="findGuestByName" parameterType="string" resultMap="guest">

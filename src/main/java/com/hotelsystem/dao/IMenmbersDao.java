@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.List;
@@ -24,5 +25,6 @@ public interface IMenmbersDao{
 	public List<MenmbersBean> checkAllMenmbers();
 	//根据id查看会员
 	public MenmbersBean checkIdByMenmbers(String id);
-
+	
+	List<MenmbersBean> findMenmbersByName(String name);
 }

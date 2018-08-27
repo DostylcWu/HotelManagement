@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hotelsystem.dao.IManagerLoginDao;
 import com.hotelsystem.dao.IManagerRecordDao;
-import com.hotelsystem.service.manager.impl.IManagerRecordServiceImpl;
+import com.hotelsystem.service.manager.suppermanager.impl.IManagerRecordServiceImpl;
 
 
 public class ManageRecord {
@@ -17,10 +17,10 @@ public class ManageRecord {
 		
 		IManagerLoginDao dao=context.getBean("IManagerLoginDao",IManagerLoginDao.class);//获取bean
 		IManagerRecordDao dao1=context.getBean("IManagerRecordDao",IManagerRecordDao.class);
-		service.setDao(dao1);
+/*		service.setDao(dao1);
 		service.setLdao(dao);
 		String name="admin1";
 		int cid=service.punchIn(name);
-		service.punchOut(cid);
+		service.punchOut(cid);*/
 	}
 }

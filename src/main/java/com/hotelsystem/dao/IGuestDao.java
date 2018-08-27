@@ -1,22 +1,28 @@
+
 package com.hotelsystem.dao;
 
+import java.util.HashSet;
 import java.util.List;
-
-import org.springframework.stereotype.Repository;
 
 import com.hotelsystem.bean.GuestBean;
 
 /**
- * 宾客表dao
- * wpy
- */
+ *@ClassName ICounterDao
+ *@Description TODO:
+ *@Author Li Gen
+ *@Date 2018年8月5日 下午10:59:01
+ *@Version 1.0
+ **/
 public interface IGuestDao {
-	
 	/**
 	 * 添加宾客
-	 */
-	void insertGuest(GuestBean gb);
-	
+	 */	
+	public void insertGuest(GuestBean guest);
+	/**
+	 * 删除宾客
+	 */	
+	public void deleteGuest(Integer rid);
+			
 	/**
 	 * 按id查找
 	 * @param id
@@ -36,4 +42,20 @@ public interface IGuestDao {
 	 * @return
 	 */
 	List<GuestBean> findAllGuestBean();
+	/**
+	 * 按房间名查找
+	 * @param 房间号
+	 * @return
+	 */
+	List<GuestBean> findGuestByRoomId(Integer id);
+	/**
+	 * 
+	 * @Title: findAllGuestId 
+	 * @Description: TODO
+	 * @param @return
+	 * @return HashSet<String>
+	 * @throws
+	 */
+	public HashSet<String> findAllGuestId();
+
 }

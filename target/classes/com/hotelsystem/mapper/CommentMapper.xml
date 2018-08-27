@@ -7,7 +7,7 @@
 <mapper namespace="com.hotelsystem.dao.ICommentDao">
   <!-- 查看全部评论 -->
   <select id="findAllComment" resultMap="comment">
-    select * from user_comment where flag = 0;
+    select * from user_comment where flag = 0
   </select>
   <!-- 结果映射 -->
   <resultMap type="com.hotelsystem.bean.CommentBean" id="comment">
@@ -21,11 +21,12 @@
   <update id="deleteComment" parameterType="com.hotelsystem.bean.CommentBean" >
   	update user_comment set flag = 1 where uc_id = #{id};
   </update>
-  
-    <!-- 添加评论 -->
-  <insert id="insertComment" parameterType="com.hotelsystem.bean.CommentBean">
+      <!-- 添加评论 -->
+  <insert id="insertComment" parameterType="CommentBean">
     insert into 
     	user_comment (uc_time, uc_content, uc_name) 
-    		   values(#{date}, #{content}, #{userLogin.id});
+    		   values(#{date}, #{content}, 
+				(SELECT ul_id from user_login WHERE ul_account=#{userLogin.account}));
   </insert>
+  
 </mapper>

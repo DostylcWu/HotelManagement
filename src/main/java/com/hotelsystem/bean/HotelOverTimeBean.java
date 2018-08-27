@@ -1,6 +1,8 @@
+
 package com.hotelsystem.bean;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 
 /**
  * 超时收费规则
@@ -12,24 +14,24 @@ import java.util.Date;
  */
 public class HotelOverTimeBean {
 	private int id;
-	private Date overHalfDayStartTime;
-	private Date overAllDayStartTime;
+	private Time overHalfDayStartTime;
+	private Time overAllDayStartTime;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getOverHalfDayStartTime() {
+	public Time getOverHalfDayStartTime() {
 		return overHalfDayStartTime;
 	}
-	public void setOverHalfDayStartTime(Date overHalfDayStartTime) {
+	public void setOverHalfDayStartTime(Time overHalfDayStartTime) {
 		this.overHalfDayStartTime = overHalfDayStartTime;
 	}
-	public Date getOverAllDayStartTime() {
+	public Time getOverAllDayStartTime() {
 		return overAllDayStartTime;
 	}
-	public void setOverAllDayStartTime(Date overAllDayStartTime) {
+	public void setOverAllDayStartTime(Time overAllDayStartTime) {
 		this.overAllDayStartTime = overAllDayStartTime;
 	}
 	@Override

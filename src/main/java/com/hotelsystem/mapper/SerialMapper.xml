@@ -1,9 +1,12 @@
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hotelsystem.dao.SerialDao">
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.hotelsystem.dao.ISerialDao">
     <!--auto generated Code-->
     <resultMap id="BaseResultMap" type="com.hotelsystem.bean.SerialBean">
         <result column="se_id" property="seId" jdbcType="VARCHAR"/>
-        <result column="se_paid_money" property="sePaidMoney" jdbcType="VARCHAR"/>
+        <result column="se_paid_money" property="sePaidMoney" jdbcType="DOUBLE"/>
         <result column="se_arr_day" property="seArrDay" jdbcType="TIMESTAMP"/>
         <result column="se_phone" property="sePhone" jdbcType="VARCHAR"/>
         <result column="se_time_now" property="seTimeNow" jdbcType="TIMESTAMP"/>
@@ -16,7 +19,6 @@
     <sql id="Base_Column_List">
         se_id,
         se_paid_money,
-        flag,
         se_arr_day,
         se_phone,
         se_time_now,
@@ -26,7 +28,7 @@ se_c_room
 </sql>
 
     <!--auto generated Code-->
-    <insert id="insert" >
+    <insert id="insert" useGeneratedKeys="true" keyProperty="serialBean.seId">
         INSERT INTO serial (
             se_id,
             se_paid_money,
@@ -38,7 +40,7 @@ se_c_room
             se_c_room
         ) VALUES (
             #{serialBean.seId,jdbcType=VARCHAR},
-            #{serialBean.sePaidMoney,jdbcType=VARCHAR},
+            #{serialBean.sePaidMoney,jdbcType=DOUBLE},
             #{serialBean.seArrDay,jdbcType=TIMESTAMP},
             #{serialBean.sePhone,jdbcType=VARCHAR},
             #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
@@ -49,7 +51,7 @@ se_c_room
 </insert>
 
     <!--auto generated Code-->
-    <insert id="insertSelective" >
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="serialBean.seId">
         INSERT INTO serial
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="serialBean.seId!=null"> se_id,</if>
@@ -64,8 +66,7 @@ se_c_room
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="serialBean.seId!=null"> #{serialBean.seId,jdbcType=VARCHAR},</if>
-            <if test="serialBean.sePaidMoney!=null"> #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>
-
+            <if test="serialBean.sePaidMoney!=null"> #{serialBean.sePaidMoney,jdbcType=DOUBLE},</if>
             <if test="serialBean.seArrDay!=null"> #{serialBean.seArrDay,jdbcType=TIMESTAMP},</if>
             <if test="serialBean.sePhone!=null"> #{serialBean.sePhone,jdbcType=VARCHAR},</if>
             <if test="serialBean.seTimeNow!=null"> #{serialBean.seTimeNow,jdbcType=TIMESTAMP},</if>
@@ -82,7 +83,7 @@ se_c_room
         <foreach collection="serialBeans" item="serialBean" index="index" separator=",">
             (
             #{serialBean.seId,jdbcType=VARCHAR},
-            #{serialBean.sePaidMoney,jdbcType=VARCHAR},
+            #{serialBean.sePaidMoney,jdbcType=DOUBLE},
             #{serialBean.seArrDay,jdbcType=TIMESTAMP},
             #{serialBean.sePhone,jdbcType=VARCHAR},
             #{serialBean.seTimeNow,jdbcType=TIMESTAMP},
@@ -92,13 +93,13 @@ se_c_room
             )
         </foreach>
 </insert>
+
     <!--auto generated Code-->
     <update id="update">
         UPDATE serial
         <set>
                 <if test="serialBean.seId != null"> se_id = #{serialBean.seId,jdbcType=VARCHAR},</if>
-                <if test="serialBean.sePaidMoney != null"> se_paid_money = #{serialBean.sePaidMoney,jdbcType=VARCHAR},</if>
-                <if test="serialBean.flag != null"> flag = #{serialBean.flag,jdbcType=INTEGER},</if>
+                <if test="serialBean.sePaidMoney != null"> se_paid_money = #{serialBean.sePaidMoney,jdbcType=DOUBLE},</if>
                 <if test="serialBean.seArrDay != null"> se_arr_day = #{serialBean.seArrDay,jdbcType=TIMESTAMP},</if>
                 <if test="serialBean.sePhone != null"> se_phone = #{serialBean.sePhone,jdbcType=VARCHAR},</if>
                 <if test="serialBean.seTimeNow != null"> se_time_now = #{serialBean.seTimeNow,jdbcType=TIMESTAMP},</if>
@@ -108,5 +109,22 @@ se_c_room
         </set>
 		WHERE se_id = #{serialBean.seId,jdbcType=VARCHAR}
     </update>
+    
+    <select id="find"  resultMap="BaseResultMap">
+  		select * from
+  		serial 
+  		where flag=0
+  	</select>
+    <select id="findBySTimeGreaterThanOrEqualToAndSTimeLessThanOrEqualTo"  resultMap="BaseResultMap">
+  		select * from
+  		serial 
+  		where flag=0 
+  		<if test="maxSTime!=null">
+  		and se_time_now &lt; #{maxSTime} 
+  		</if>
+  		<if test="minSTime!=null">
+  		and se_time_now &gt; #{minSTime}
+  		</if>
+  	</select>
+    
 </mapper>
-

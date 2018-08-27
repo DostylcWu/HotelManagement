@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.Date;
@@ -71,5 +72,16 @@ public interface IHotelDiscountDao {
 	 * @return 返回受影响行数
 	 */
 	 List<HotelDiscountBean> findAllDiscount();
+	 /**
+	 * 更据日期段查询该段日期内是否已有折扣
+	 * @MethodName findGivenTimeDiscount
+	 * @Description TODO
+	 * @author Ren Qiang
+	 * @Date 2018/8/18 下午14:32
+	 * @version 1.0
+	 * @param id
+	 * @return 返回折扣List
+	 */
+	 List<HotelDiscountBean> findGivenTimeDiscount(@Param("stime")Date stime,@Param("etime")Date etime);
 
 }

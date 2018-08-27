@@ -16,7 +16,10 @@
   		<result property="endTime" column="d_etime"></result>
   		<result property="value" column="d_value"></result>
   	</resultMap>
-  	
+  	<!-- 查询特定时间段是否有全场折扣 -->
+  	<select id="findGivenTimeDiscount" resultMap="discountMap">
+   		select * from hotel_discount where d_id not in(select d_id from hotel_discount where DATE(d_etime) &lt; #{stime} or DATE(d_stime) &gt; #{etime} and flag=0) and flag=0; 
+  	</select>
   	<!-- 通过id修改全场折扣信息 -->
   	<update id="updateDiscount">
   		update hotel_discount 
@@ -27,7 +30,7 @@
   		  <if test="bean.endTime!=null">
   		     d_etime=#{bean.endTime},
   		  </if>
-  		  <if test="bean.value!=0">
+  		  <if test="bean.value!=null">
   		     d_value=#{bean.value},
   		  </if>
   		</set>
@@ -47,6 +50,6 @@
   	
   	<!-- 查询酒店所有有效的全场折扣 -->
   	<select id="findAllDiscount"  resultMap="discountMap">
-   		select * from hotel_discount where flag=0; 
+   		select * from hotel_discount where flag=0 order by d_stime asc; 
   	</select>  	
 </mapper>

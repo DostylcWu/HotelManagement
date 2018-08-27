@@ -4,24 +4,21 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.hotelsystem.dao.ILevelDiscountDao;
 import com.hotelsystem.dao.IManagerLoginDao;
-
-import com.hotelsystem.service.manager.IManagerLoginService;
-import com.hotelsystem.service.manager.impl.IManagerLoginServiceImpl;
+import com.hotelsystem.service.manager.suppermanager.IManagerLoginService;
 
 public class ManagerLoginTest {
 
-	private IManagerLoginServiceImpl service= new IManagerLoginServiceImpl();
+	
 	@Test
 	public void test(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("config/applicationContext.xml");
 		//获取bean
 		IManagerLoginDao dao=context.getBean("IManagerLoginDao",IManagerLoginDao.class);
-		service.setDao(dao);
+		IManagerLoginService service=context.getBean(IManagerLoginService.class);
 		String name="";
 		String pwd="";
 		
-		System.out.println(service.allManager());
+		System.out.println(service.loginManager(name, pwd));
 	}
 }

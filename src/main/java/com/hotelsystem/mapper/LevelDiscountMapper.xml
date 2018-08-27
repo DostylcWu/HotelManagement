@@ -41,4 +41,10 @@
 		<result column="c_discount" property="classDiscount" />
 		<result column="c_consume" property="classConsume"/>
 	</resultMap>
+<select id="findFirstId" parameterType="int" resultType="INT">
+	select c_id from level_discount  order by c_id  LIMIT 1
+</select>	
+<select id="findEndId" parameterType="int" resultType="INT">
+	select c_id from level_discount  order by c_id desc LIMIT 1
+</select>	
 </mapper>

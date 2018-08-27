@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public interface ICheckInPersonDao {
 	 * @return int
 	 * @throws
 	 */
-	public int insertCheckInPerson(CheckInPersonBean bean);
+	 int insertCheckInPerson(CheckInPersonBean bean);
 	/**
 	 * 更新入住人员信息
 	 * @Title: update 
@@ -33,17 +34,17 @@ public interface ICheckInPersonDao {
 	 * @return int
 	 * @throws
 	 */
-	public int updateCheckInPerson(CheckInPersonBean bean);
+	 int updateCheckInPerson(CheckInPersonBean bean);
 	/**
 	 * 
 	 * @Title: deleteCheckInPerson 
 	 * @Description: TODO
-	 * @param @param bean
+	 * @param @param id
 	 * @param @return
 	 * @return int
 	 * @throws
 	 */
-	public int deleteCheckInPerson(CheckInPersonBean bean);
+	 int deleteCheckInPerson(int id);
 	/**
 	 * 通过预订订单ID查询到对应的入住人
 	 * @Title: selectPersons 
@@ -52,7 +53,17 @@ public interface ICheckInPersonDao {
 	 * @return List<CheckInPersonBean>
 	 * @throws
 	 */
-	public List<CheckInPersonBean> findCheckInPersonByRoomId(String reserveRoomId);
+	 List<CheckInPersonBean> findCheckInPersonByRoomId(String reserveRoomId);
+	/**
+	 * 
+	 * @Title: findById 
+	 * @Description: TODO
+	 * @param @param id
+	 * @param @return
+	 * @return CheckInPersonBean
+	 * @throws
+	 */
+	CheckInPersonBean findById(int id);
 
 	/**
 	 * 
@@ -64,7 +75,15 @@ public interface ICheckInPersonDao {
 	* @throws
 	 */
 	public int updateCheckInPersonByRoomId(CheckInPersonBean bean);
-	
-	
+	/**
+	 * 
+	 * @Title: deleteCheckInPersonByRoomId 
+	 * @Description: TODO
+	 * @param @param roomId
+	 * @param @return
+	 * @return int
+	 * @throws
+	 */
+	int deleteCheckInPersonByRoomId(String roomId);
 
 }

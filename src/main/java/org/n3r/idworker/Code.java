@@ -1,3 +1,4 @@
+
 package org.n3r.idworker;
 
 import org.n3r.idworker.strategy.DefaultRandomCodeStrategy;

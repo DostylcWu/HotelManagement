@@ -1,3 +1,4 @@
+
 package com.hotelsystem.bean;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -51,7 +52,7 @@ public class SerialBean {
     }
 
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     public Date getSeArrDay() {
         return seArrDay;
     }
@@ -67,7 +68,7 @@ public class SerialBean {
     public void setSePhone(String sePhone) {
         this.sePhone = sePhone;
     }
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     public Date getSeTimeNow() {
         return seTimeNow;
     }

@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import org.springframework.stereotype.Repository;
@@ -34,6 +35,16 @@ public interface IReservePeopleDao {
 	 * @throws
 	 */
 	public ReservePeopleBean findReservePeopleByPeopleId(int reservePeopleId);
+	/**
+	 * 
+	 * @Title: findReservePeopleByPeopleTel 
+	 * @Description: TODO
+	 * @param @param tel
+	 * @param @return
+	 * @return ReservePeopleBean
+	 * @throws
+	 */
+	ReservePeopleBean findReservePeopleByPeopleTel(String tel);
 	/**
 	 * 
 	 * @Title: insertReservePeople 

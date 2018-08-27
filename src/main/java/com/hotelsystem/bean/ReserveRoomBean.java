@@ -1,7 +1,12 @@
+
 package com.hotelsystem.bean;
 
 import java.util.Date;
 import java.util.List;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
  * 预订房间信息
@@ -23,18 +28,22 @@ public class ReserveRoomBean {
 	/**
 	 * 入住时间，
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date checkIn;
 	/**
 	 * 退房时间
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date checkOut;
 	/**
 	 * 抵达时间
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date arrive;
 	/**
 	 * 取消时间
 	 */
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date cancel;
 	/**
 	 * 付款金额
@@ -68,7 +77,7 @@ public class ReserveRoomBean {
 	public void setPay(String pay) {
 		this.pay = pay;
 	}
-
+	@JsonFormat(pattern="yyyy-MM-dd")
 	public Date getCheckIn() {
 		return checkIn;
 	}
@@ -76,15 +85,15 @@ public class ReserveRoomBean {
 	public void setCheckIn(Date checkIn) {
 		this.checkIn = checkIn;
 	}
-
+	@JsonFormat(pattern="yyyy-MM-dd")
 	public Date getCheckOut() {
 		return checkOut;
 	}
-
+	
 	public void setCheckOut(Date checkOut) {
 		this.checkOut = checkOut;
 	}
-
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	public Date getArrive() {
 		return arrive;
 	}
@@ -92,7 +101,7 @@ public class ReserveRoomBean {
 	public void setArrive(Date arrive) {
 		this.arrive = arrive;
 	}
-
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	public Date getCancel() {
 		return cancel;
 	}

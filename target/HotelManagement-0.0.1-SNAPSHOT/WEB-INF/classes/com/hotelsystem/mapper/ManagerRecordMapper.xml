@@ -18,4 +18,26 @@ SELECT * FROM manager_record WHERE mr_id=#{id};
 		<result column="mr_ontime" property="mrOnTime"/>
 		<result column="mr_offtime" property="mrOffTime"/>
 </resultMap>
+<!-- 通过日期查询管理员工作日志 -->
+<select id="findManagerRecordByDate"  resultMap="timeMap">
+SELECT *FROM vi_managerlogin WHERE u_id!=1 and mr_ontime between #{date} and #{date2}
+</select>
+<resultMap type="ViManagerLoginBean" id="timeMap">
+	<id column="u_id" property="vmId"></id>
+	<result column="u_name" property="vmName"/>
+	<result column="mr_ontime" property="vmOnTime" />
+	<result column="mr_offtime" property="vmOffTime"/>
+	<result column="mr_status" property="vmStatus"/>
+</resultMap>
+<!-- 查询全部工作日志 -->
+<select id="findManagerRecord"  resultMap="timeMap2">
+SELECT *FROM vi_managerlogin where u_name!='admin'
+</select>
+<resultMap type="ViManagerLoginBean" id="timeMap2">
+	<id column="u_id" property="vmId"></id>
+	<result column="u_name" property="vmName"/>
+	<result column="mr_ontime" property="vmOnTime" />
+	<result column="mr_offtime" property="vmOffTime"/>
+	<result column="mr_status" property="vmStatus"/>
+</resultMap>
 </mapper>

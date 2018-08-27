@@ -20,7 +20,13 @@
  	<update id = "updateCheckInPersonByRoomId" parameterType = "CheckInPersonBean">
  		update checkin_person set cp_name=#{name} where cp_rr_id=#{reserveRoom.id}
  	</update>
- 	<update id="deleteCheckInPerson" parameterType="CheckInPersonBean">
+ 	<update id="deleteCheckInPerson" parameterType="int">
  		update checkin_person set flag=1 where cp_id=#{id}
  	</update>
+ 	<update id="deleteCheckInPersonByRoomId" parameterType="String">
+ 		update checkin_person set flag=1 where cp_rr_id=#{id}
+ 	</update>
+ 	<select id="findById" resultMap="map" parameterType="int">
+ 		select * from checkin_person where cp_id=#{id} and flag=0
+ 	</select>
  </mapper>

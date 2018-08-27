@@ -1,6 +1,8 @@
+
 package com.hotelsystem.bean;
 
-import java.util.Date;
+import java.sql.Date;
+
 /**
  * 酒店折扣表
  * @ClassName HotelDiscountBean

@@ -1,21 +1,12 @@
 package com.test.dao;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hotelsystem.bean.LevelDiscountBean;
-import com.hotelsystem.dao.IHotelOverTimeDao;
 import com.hotelsystem.dao.ILevelDiscountDao;
-import com.hotelsystem.dao.IRoomTypeDao;
-
-import com.hotelsystem.service.manager.ILevelDiscountService;
-import com.hotelsystem.service.manager.impl.ILevelDiscountServiceImpl;
-import com.test.util.MybatisUtil;
+import com.hotelsystem.service.manager.suppermanager.impl.ILevelDiscountServiceImpl;
 
 public class LevelDiscountTest {
 	@Test
@@ -33,7 +24,7 @@ public class LevelDiscountTest {
 		bean.setClassDiscount(0.8);
 		bean.setClassConsume(600);
 		System.out.println(bean);
-		System.out.println(service.updateDiscount(bean));
+/*		System.out.println(service.updateDiscount(bean));*/
 	
 	}
 	@Test

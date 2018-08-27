@@ -1,8 +1,11 @@
+
 package com.hotelsystem.bean;
 
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @ClassName CheckInBean
@@ -26,6 +29,8 @@ public class CheckInBean {
 	private double pledgeMoney;
 
 	private double paidMoney;
+	
+	private Set<GuestBean> guests = new HashSet<GuestBean>();
 
 	public String getId() {
 		return id;
@@ -82,13 +87,22 @@ public class CheckInBean {
 	public void setPledgeMoney(double pledgeMoney) {
 		this.pledgeMoney = pledgeMoney;
 	}
+	
+	public Set<GuestBean> getGuests() {
+		return guests;
+	}
+
+	public void setGuests(Set<GuestBean> guests) {
+		this.guests = guests;
+	}
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", room=" + room + ", arriveTime=" + arriveTime
-				+ ", leaveTime=" + leaveTime + ", stayDays=" + stayDays
-				+ ", pledgeMoney=" + pledgeMoney + ", paidMoney=" + paidMoney
-				+ "";
+		return "CheckInBean [id=" + id + ", room=" + room + ", arriveTime="
+				+ arriveTime + ", leaveTime=" + leaveTime + ", stayDays="
+				+ stayDays + ", pledgeMoney=" + pledgeMoney + ", paidMoney="
+				+ paidMoney + ", guests=" + guests + "]";
 	}
 
+	
 }

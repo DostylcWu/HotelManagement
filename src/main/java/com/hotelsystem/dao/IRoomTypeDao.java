@@ -1,3 +1,4 @@
+
 package com.hotelsystem.dao;
 
 import java.util.List;
@@ -83,4 +84,17 @@ public interface IRoomTypeDao {
 	 * @return 该房间类型价格
 	 */
     public RoomTypeBean findRoomTypeById(int roomTypeId);
+    
+    /**
+	 * 查询所有房间类型的详细信息
+	 * @MethodName findRoomTypeDetailInfo
+	 * @Description TODO
+	 * @author Ren　Qiang
+	 * @Date 2018/8/13 晚上23:39
+	 * @version 1.0
+	 * @param typeName房间类型名字
+	 * @param stateName房间状态名字
+	 * @return 该房间类型该状态数量
+	 */
+    public Integer findRoomTypeDetailInfo(@Param("typeName")String typeName,@Param("stateName") String stateName);
 }

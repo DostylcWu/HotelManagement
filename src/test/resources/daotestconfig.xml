@@ -36,8 +36,18 @@
     <mapper resource="com/hotelsystem/mapper/RoomInfoMapper.xml"></mapper>
     <mapper resource="com/hotelsystem/mapper/RoomStateMapper.xml"></mapper>
     <mapper resource="com/hotelsystem/mapper/RoomTypeMapper.xml"></mapper>
-      <mapper resource="com/hotelsystem/mapper/ConsumeMapper.xml"></mapper>
-      <mapper resource="com/hotelsystem/mapper/SerialMapper.xml"></mapper>
-      <mapper resource="com/hotelsystem/mapper/CheckInMapper.xml"></mapper>
+  <mapper resource="com/hotelsystem/mapper/ViewReserveRoomMapper.xml"></mapper>
+   <mapper resource="com/hotelsystem/mapper/ReservePeopleMapper.xml"></mapper>
+  <mapper resource="com/hotelsystem/mapper/ReserveNumberMapper.xml"></mapper>
+   <mapper resource="com/hotelsystem/mapper/ReserveRoomMapper.xml"></mapper>
+    <mapper resource="com/hotelsystem/mapper/CheckInPersonMapper.xml"></mapper>
+ 
+ 
   </mappers>
+  
+  
+  
+  
+  
+  
 </configuration>

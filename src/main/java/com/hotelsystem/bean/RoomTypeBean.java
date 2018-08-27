@@ -1,3 +1,4 @@
+
 package com.hotelsystem.bean;
 /**
  * 房间类型表
@@ -44,10 +45,13 @@ public class RoomTypeBean {
 	 *  房间的开窗方式
 	 */
 	private String window;
+	
 	// 房间有无早餐
     private String breakfirst;
+    
     // 是否为无烟楼
     private String noSmoking;
+    
 	public int getId() {
 		return id;
 	}
@@ -120,6 +124,8 @@ public class RoomTypeBean {
 		this.window = window;
 	}
 
+	
+
 	public String getBreakfirst() {
 		return breakfirst;
 	}
@@ -143,8 +149,13 @@ public class RoomTypeBean {
 
 	@Override
 	public String toString() {
-		return "RoomTypeBean [id=" + id + ", name=" + name + ", price=" + price + ", img=" + img + ", people=" + people
-				+ ", area=" + area + ", bedType=" + bedType + ", netType=" + netType + ", window=" + window + "]";
+		return "RoomTypeBean [id=" + id + ", name=" + name + ", price=" + price
+				+ ", img=" + img + ", people=" + people + ", area=" + area
+				+ ", bedType=" + bedType + ", netType=" + netType + ", window="
+				+ window + ", breakfirst=" + breakfirst + ", noSmoking="
+				+ noSmoking + "]";
 	}
+
+	
 
 }
